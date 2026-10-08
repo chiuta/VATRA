@@ -930,7 +930,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <h3><span class="n">02</span>Referință completă — caută un nod</h3>
   <div class="searchbox">
     <span class="ico">⌕</span>
-    <input type="text" id="knotSearch" placeholder="Caută un nod sau o utilizare… (ex: cort, îmbinare, urcare)">
+    <input type="text" id="knotSearch" aria-label="Caută un nod" placeholder="Caută un nod sau o utilizare… (ex: cort, îmbinare, urcare)">
     <span class="count-pill" id="knotCount"></span>
   </div>
   <div class="qlist" id="knotList"><!-- populat de JS din NODURI --></div>
@@ -1503,7 +1503,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 
   <div class="searchbox">
     <span class="ico">⌕</span>
-    <input type="text" id="glossSearch" placeholder="Caută un termen… (ex: hipotermie, azimut, UET)">
+    <input type="text" id="glossSearch" aria-label="Caută un termen în glosar" placeholder="Caută un termen… (ex: hipotermie, azimut, UET)">
     <span class="count-pill" id="glossCount"></span>
   </div>
   <div id="glossList"><!-- populat de JS din GLOSSARY --></div>
@@ -1791,7 +1791,7 @@ const QUIZ = [
   {cat:'semnalizare', q:'Simbolul sol-aer „V" (mare, format din materiale la sol) înseamnă:', opts:['Nu (negativ)','Necesit asistență','Da (afirmativ)','Loc sigur de aterizare'], correct:1, explain:'Unul dintre simbolurile standard recunoscute internațional.'},
   {cat:'semnalizare', q:'Simbolul sol-aer „X" înseamnă:', opts:['Necesit hrană și apă','Nu pot continua — necesit asistență medicală','Mă îndrept în această direcție','Da (afirmativ)'], correct:1, explain:'Semnalează o urgență medicală specifică, dincolo de nevoia generală de ajutor.'},
   {cat:'semnalizare', q:'Codul Morse pentru SOS este:', opts:['−·−·−·−','···−−−···','−−−···−−−','··−··−··'], correct:1, explain:'Trei scurte, trei lungi, trei scurte, transmise lipit, fără pauze de literă.'},
-  {cat:'semnalizare', q:'Semnalul alpin standard de chemare de ajutor cu fluierul e:', opts:['3 semnale/minut, continuu','6 semnale/minut, pauză 1 minut, repetă','1 semnal lung, o singură dată','10 semnale rapide, fără pauză'], correct:1, explain:'Răspunsul standard e 3 semnale/minut, pauză 1 minut, repetă.'},
+  {cat:'semnalizare', q:'Semnalul alpin standard de chemare de ajutor cu fluierul e:', opts:['3 semnale/minut, continuu','6 semnale/minut, pauză 1 minut, repetă','1 semnal lung, o singură dată','10 semnale rapide, fără pauză'], correct:1, explain:'Chemarea de ajutor: 6 semnale/minut, pauză 1 minut, repetă (răspunsul: 3 semnale/minut) — vezi §04 Semnale cu fluierul.'},
   {cat:'semnalizare', q:'Câte focuri, dispuse într-un anumit fel, formează un semnal internațional de pericol?', opts:['Unul singur, foarte mare','Două, alăturate','Trei, în triunghi sau linie','Cinci, în cerc'], correct:2, explain:'Un tipar recunoscut, distinct de un simplu foc de tabără.'},
   {cat:'semnalizare', q:'La semnalizarea cu oglinda, mâna liberă se ține:', opts:['La spate','Întinsă, cu două degete în „V" spre țintă','Deasupra capului, pumn strâns','Nu contează poziția'], correct:1, explain:'Punctul de lumină reflectată se aliniază între cele două degete, spre țintă.'},
   {cat:'semnalizare', q:'La un apel de urgență către 112, ce informație nu trebuie omisă?', opts:['Semnul zodiacal','Locația cât mai precisă (reper, coordonate GPS)','Marca telefonului folosit','Culoarea hainelor'], correct:1, explain:'Fără o locație precisă, ajutorul nu poate ajunge, indiferent de restul detaliilor.'},
@@ -2028,6 +2028,25 @@ function updateChecklistProgress(){
   $('#checklistProgressBar').style.width = pct+'%';
   $('#checklistProgressLabel').textContent = done+' din '+total+' bifate ('+pct+'%)';
 }
+function sanitizeChecklist(o){
+  const out = {};
+  if(o && typeof o==='object' && !Array.isArray(o)){ Object.keys(o).forEach(k=>{ if(typeof o[k]==='boolean') out[k]=o[k]; }); }
+  return out;
+}
+function sanitizeSrs(o){
+  const out = {};
+  if(o && typeof o==='object' && !Array.isArray(o)){
+    Object.keys(o).forEach(k=>{
+      const c = o[k];
+      if(/^q\d+$/.test(k) && c && [c.ease,c.interval,c.reps,c.dueDate].every(x=>typeof x==='number' && isFinite(x))) out[k]={ease:c.ease, interval:c.interval, reps:c.reps, dueDate:c.dueDate};
+    });
+  }
+  return out;
+}
+function sanitizeNotes(a){
+  return (Array.isArray(a)?a:[]).filter(n=>n && typeof n.term==='string' && typeof n.def==='string').map(n=>({term:n.term.slice(0,60), def:n.def.slice(0,240)}));
+}
+function parseCoord(v){ return parseFloat(String(v).replace(',','.')); }
 function checklistExport(){
   downloadJSON({vatra_trusa: checklistState}, 'vatra-trusa.json');
 }
@@ -2036,7 +2055,7 @@ function checklistImportFile(file){
   reader.onload = ()=>{
     try{
       const data = JSON.parse(reader.result);
-      if(data && data.vatra_trusa){ checklistState = data.vatra_trusa; renderChecklist(); updateChecklistProgress(); }
+      if(data && data.vatra_trusa){ checklistState = sanitizeChecklist(data.vatra_trusa); renderChecklist(); updateChecklistProgress(); }
     }catch(e){}
   };
   reader.readAsText(file);
@@ -2116,7 +2135,7 @@ function renderQuizQuestion(){
     return;
   }
   const item = quizRound[quizIdx];
-  const optsHtml = item.opts.map((o,i)=>`<button class="quiz-opt" data-i="${i}" type="button">${o}</button>`).join('');
+  const optsHtml = shuffle(item.opts.map((o,i)=>i)).map(i=>`<button class="quiz-opt" data-i="${i}" type="button">${item.opts[i]}</button>`).join('');
   area.innerHTML = `<div class="quiz-card">
     <div class="quiz-q">Întrebarea ${quizIdx+1}/${quizRound.length} · <span style="color:var(--ink-faint);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-mono);">${QUIZ_CAT_LABELS[item.cat]}</span><br>${item.q}</div>
     ${optsHtml}
@@ -2132,7 +2151,7 @@ function renderQuizQuestion(){
         quizScore.correct++;
       } else {
         btn.classList.add('wrong');
-        $$('#quizArea .quiz-opt')[item.correct].classList.add('correct');
+        $('#quizArea .quiz-opt[data-i="'+item.correct+'"]').classList.add('correct');
       }
       if(srsMode){
         const id = hashStr(item.q);
@@ -2159,7 +2178,7 @@ function srsImportFile(file){
   reader.onload = ()=>{
     try{
       const data = JSON.parse(reader.result);
-      if(data && data.vatra_srs){ srsState = data.vatra_srs; $('#srsStatus').textContent = 'Progres importat.'; }
+      if(data && data.vatra_srs){ srsState = sanitizeSrs(data.vatra_srs); $('#srsStatus').textContent = 'Progres importat.'; }
       else { $('#srsStatus').textContent = 'Fișier nerecunoscut.'; }
     }catch(e){ $('#srsStatus').textContent = 'Eroare la citirea fișierului.'; }
   };
@@ -2213,7 +2232,7 @@ function importNotesFile(file){
     try{
       const data = JSON.parse(reader.result);
       if(data && Array.isArray(data.vatra_notite)){
-        personalNotes = personalNotes.concat(data.vatra_notite);
+        personalNotes = personalNotes.concat(sanitizeNotes(data.vatra_notite));
         renderNotes();
         $('#noteStatus').textContent = 'Importat.';
       } else { $('#noteStatus').textContent = 'Fișier nerecunoscut.'; }
@@ -2227,7 +2246,8 @@ function importNotesFile(file){
    ============================================================ */
 let sosTimers = [];
 let sosAudioCtx = null;
-function clearSosTimers(){ sosTimers.forEach(t=>clearTimeout(t)); sosTimers=[]; }
+let sosOscs = [];
+function clearSosTimers(){ sosTimers.forEach(t=>clearTimeout(t)); sosTimers=[]; sosOscs.forEach(o=>{ try{ o.stop(); o.disconnect(); }catch(e){} }); sosOscs=[]; }
 function sosPattern(){
   // unitate = 200ms; punct=1u, linie=3u, pauză-simbol=1u, pauză-literă=3u
   const u = 200;
@@ -2258,6 +2278,7 @@ function playSOSSound(){
   stopSOS();
   if(!sosAudioCtx){ sosAudioCtx = new (window.AudioContext||window.webkitAudioContext)(); }
   const ctx = sosAudioCtx;
+  if(ctx.state==='suspended' && ctx.resume){ ctx.resume(); }
   const lamp = $('#sosLamp');
   const {seq, total} = sosPattern();
   function tone(startMs, endMs){
@@ -2268,7 +2289,7 @@ function playSOSSound(){
     gain.gain.value = 0.18;
     const startAt = ctx.currentTime + startMs/1000;
     const endAt = ctx.currentTime + endMs/1000;
-    osc.start(startAt); osc.stop(endAt);
+    osc.start(startAt); osc.stop(endAt); sosOscs.push(osc);
   }
   function cycle(){
     seq.forEach(s=>{
@@ -2293,6 +2314,8 @@ function stopSOS(){
 let compassActive = false;
 function handleOrientation(e){
   let heading = null;
+  // alpha relativ (fără referință nord) nu e o busolă: îl ignorăm, ca să nu afișăm direcții false
+  if(typeof e.webkitCompassHeading!=='number' && !e.absolute) return;
   if(typeof e.webkitCompassHeading === 'number'){ heading = e.webkitCompassHeading; }
   else if(e.absolute && e.alpha!==null){ heading = 360 - e.alpha; }
   else if(e.alpha!==null){ heading = 360 - e.alpha; }
@@ -2359,9 +2382,9 @@ function exportAllProgress(){
 }
 function applyBackupData(data){
   let parts = [];
-  if(data.trusa){ checklistState = data.trusa; renderChecklist(); updateChecklistProgress(); parts.push('trusă'); }
-  if(Array.isArray(data.notite)){ personalNotes = data.notite; renderNotes(); parts.push('notițe'); }
-  if(data.srs){ srsState = data.srs; parts.push('progres test'); }
+  if(data.trusa){ checklistState = sanitizeChecklist(data.trusa); renderChecklist(); updateChecklistProgress(); parts.push('trusă'); }
+  if(Array.isArray(data.notite)){ personalNotes = sanitizeNotes(data.notite); renderNotes(); parts.push('notițe'); }
+  if(data.srs){ srsState = sanitizeSrs(data.srs); parts.push('progres test'); }
   return parts;
 }
 function previewAndApplyBackupFile(file){
@@ -2593,9 +2616,10 @@ function init(){
 
   // Calculator azimut & distanță
   $('#bearCalcBtn').addEventListener('click', ()=>{
-    const lat1=parseFloat($('#bearLat1').value), lon1=parseFloat($('#bearLon1').value);
-    const lat2=parseFloat($('#bearLat2').value), lon2=parseFloat($('#bearLon2').value);
+    const lat1=parseCoord($('#bearLat1').value), lon1=parseCoord($('#bearLon1').value);
+    const lat2=parseCoord($('#bearLat2').value), lon2=parseCoord($('#bearLon2').value);
     if([lat1,lon1,lat2,lon2].some(isNaN)){ $('#bearOut').textContent = 'Completează toate cele patru coordonate.'; return; }
+    if(Math.abs(lat1)>90||Math.abs(lat2)>90||Math.abs(lon1)>180||Math.abs(lon2)>180){ $('#bearOut').textContent = 'Coordonate în afara intervalului (latitudine ±90, longitudine ±180).'; return; }
     const brng = bearingDeg(lat1,lon1,lat2,lon2);
     const dist = distanceKm(lat1,lon1,lat2,lon2);
     setCompassNeedle('calcCompass', brng);
@@ -2616,6 +2640,7 @@ function init(){
   $('#windCalcBtn').addEventListener('click', ()=>{
     const t=parseFloat($('#windTemp').value), v=parseFloat($('#windSpeed').value);
     if(isNaN(t)||isNaN(v)){ $('#windOut').textContent = 'Completează ambele câmpuri.'; return; }
+    if(v<0){ $('#windOut').textContent = 'Viteza vântului nu poate fi negativă.'; return; }
     const wc = windChillC(t,v);
     $('#windOut').textContent = 'Senzație termică: ≈ '+wc+'°C. '+windChillRisk(wc);
   });
@@ -2624,6 +2649,7 @@ function init(){
   $('#heatCalcBtn').addEventListener('click', ()=>{
     const t=parseFloat($('#heatTemp').value), h=parseFloat($('#heatHumidity').value);
     if(isNaN(t)||isNaN(h)){ $('#heatOut').textContent = 'Completează ambele câmpuri.'; return; }
+    if(h<0||h>100){ $('#heatOut').textContent = 'Umiditatea relativă trebuie să fie între 0 și 100%.'; return; }
     const hi = heatIndexC(t,h);
     $('#heatOut').textContent = 'Indice de căldură: ≈ '+hi+'°C resimțiți. '+heatIndexRisk(hi);
   });
