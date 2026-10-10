@@ -28,7 +28,7 @@
   --canvas-2:#ddccA0;
   --ink:#ddd3bd;
   --ink-dim:#a3947a;
-  --ink-faint:#6b5f4a;
+  --ink-faint:#998a70;
   --ink-dark:#1a1509;
   --danger:#c2564a;
   --radius:2px;
@@ -45,7 +45,7 @@
   --panel-2:#ecdfc0;
   --line:#c8b98d;
   --line-soft:#ddcda0;
-  --ember:#a8481a;
+  --ember:#963f15;
   --ember-dim:#c07a44;
   --ember-glow:rgba(168,72,26,.16);
   --moss:#3f6b34;
@@ -54,7 +54,7 @@
   --canvas-2:#2c2415;
   --ink:#241c11;
   --ink-dim:#5c5039;
-  --ink-faint:#8c8062;
+  --ink-faint:#6a5f45;
   --ink-dark:#1c1810;
   --danger:#8f3a2e;
 }
@@ -222,8 +222,10 @@ main{min-width:0;}
 .hazard.h-moderat{color:var(--ember);border-color:var(--ember-dim);}
 .hazard.h-moderat::before{background:var(--ember);}
 .hazard.h-ridicat{color:#e0a53c;border-color:#8a662a;}
+[data-theme="zi"] .hazard.h-ridicat{color:#7a4f00;}
 .hazard.h-ridicat::before{background:#e0a53c;box-shadow:0 0 6px #e0a53c;}
-.hazard.h-extrem{color:var(--danger);border-color:var(--danger);}
+.hazard.h-extrem{color:#e8806f;border-color:var(--danger);}
+[data-theme="zi"] .hazard.h-extrem{color:var(--danger);}
 .hazard.h-extrem::before{background:var(--danger);box-shadow:0 0 6px var(--danger);}
 
 /* ---------- tables ---------- */
@@ -258,7 +260,8 @@ tr:hover td{background:var(--panel-2);color:var(--ink);}
   font-family:var(--font-body);
 }
 .btn:hover{border-color:var(--ember-dim);color:var(--ember);}
-.btn.primary{background:var(--ember-dim);border-color:var(--ember-dim);color:#1a0d04;}
+.btn.primary{background:var(--ember-dim);border-color:var(--ember-dim);color:#fff5ea;}
+[data-theme="zi"] .btn.primary{color:#1a0d04;}
 .btn.primary:hover{background:var(--ember);color:#1a0d04;}
 .btn.small{padding:5px 11px;font-size:12px;}
 .btn:disabled{opacity:.4;cursor:not-allowed;}
@@ -342,12 +345,13 @@ label{display:block;font-size:11px;color:var(--ink-faint);letter-spacing:.05em;t
 .bandrow .lbl{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:12px;color:var(--ink-dim);margin-bottom:4px;}
 .bandrow .lbl b{color:var(--canvas);font-family:var(--font-body);}
 .bandbar{display:flex;height:30px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);}
-.bandbar .seg{position:relative;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-family:var(--font-mono);color:rgba(0,0,0,.6);cursor:default;font-weight:700;}
+.bandbar .seg{position:relative;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-family:var(--font-mono);color:#000;cursor:default;font-weight:700;}
 .bandbar .seg:hover{filter:brightness(1.15);}
 .seg.aer{background:var(--danger);}
 .seg.adapost{background:var(--ember);}
 .seg.apa{background:#7fb8d6;}
 .seg.hrana{background:var(--moss);}
+[data-theme="zi"] .bandbar .seg.aer,[data-theme="zi"] .bandbar .seg.adapost,[data-theme="zi"] .bandbar .seg.hrana{color:#fff;}
 .legend{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0 22px;font-size:11.5px;color:var(--ink-dim);}
 .legend span{display:inline-flex;align-items:center;gap:5px;}
 .legend i{width:10px;height:10px;border-radius:2px;display:inline-block;}
@@ -1506,7 +1510,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     <input type="text" id="glossSearch" aria-label="Caută un termen în glosar" placeholder="Caută un termen… (ex: hipotermie, azimut, UET)">
     <span class="count-pill" id="glossCount"></span>
   </div>
-  <div id="glossList"><!-- populat de JS din GLOSSARY --></div>
+  <dl id="glossList" style="margin:0;"><!-- populat de JS din GLOSSARY --></dl>
 
   <h3><span class="n">§</span>Notițele tale</h3>
   <p style="font-size:13px;color:var(--ink-faint);">Adaugă termeni proprii — o plantă locală, un traseu, un contact util. Rămân doar pe acest dispozitiv, doar în memoria paginii; exportă-le ca să nu le pierzi la închiderea filei.</p>
@@ -1522,7 +1526,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
       <input type="file" id="noteImportFile" accept="application/json" style="display:none;">
     </div>
     <div id="noteStatus" style="font-size:12px;color:var(--ink-faint);"></div>
-    <div id="noteList" style="margin-top:10px;"></div>
+    <dl id="noteList" style="margin:10px 0 0;"></dl>
   </div>
 </section>
 
