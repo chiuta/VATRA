@@ -4,7 +4,7 @@
 
 ![VATRA — captură de ecran / screenshot](screenshot.png)
 
-**Ultima actualizare:** 11 octombrie 2026 · versiune 1.0.2
+**Ultima actualizare:** 11 octombrie 2026 · versiune 1.0.3
 
 
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
@@ -12,6 +12,7 @@ Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română
 **Conținut educațional general; nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală sau evaluarea medicală de specialitate.** În urgență, în România, sună 112. Informațiile din ghid (inclusiv cifre, numere de contact, date despre faună sau legislație) pot deveni depășite; verifică sursele oficiale. Calculatoarele sunt orientative.
 
 ## Utilizare
+Caută în tot ghidul din câmpul din bara laterală (scurtătura `/`).
 Deschide `index.html` în browser (sau varianta publicată prin GitHub Pages); funcționează offline. Temă „Noapte”/„Zi” în bara laterală (alegerea se păstrează). Bifele trusei, notițele proprii, progresul testului și tema se salvează automat local în browser (`localStorage`, cheia `vatra:v1`); le poți șterge din bara laterală („Șterge datele salvate în browser”) sau exporta/importa ca fișier.
 
 ## Date și confidențialitate
@@ -29,6 +30,10 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.0.3 — 11 octombrie 2026 (runda 7)
+- Nou: căutare în tot ghidul (câmp în bara laterală, scurtătura `/`; fără diacritice, rezultate cu fragment și salt la pasajul găsit).
+- Reparat: pe secțiunile în afară de Acasă pagina nu avea niciun titlu de nivel 1 (axe-core `page-has-heading-one`); acum antetul „VATRA” din bara laterală devine titlu de nivel 1 în afara paginii Acasă.
 
 ### 1.0.2 — 11 octombrie 2026 (runda 6)
 - Adăugat: salvare automată locală a trusei, notițelor, progresului testului și temei (cu buton de ștergere); CSP cu `script-src` pe hash.

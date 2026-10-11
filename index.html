@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-YhkZ++vHW0waBm5ddEx1tcelj6ClAPIL3rGZ1wd2id8='; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3oDHMwztBY44f1qQMr5GfgrrpGqGWcKDNtuKpyQ6BxY='; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VATRA — Enciclopedia supraviețuirii</title>
 <meta name="description" content="Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.">
@@ -254,6 +254,13 @@ tr:hover td{background:var(--panel-2);color:var(--ink);}
 .searchbox .ico{color:var(--ink-faint);font-family:var(--font-mono);}
 .count-pill{font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);background:var(--panel-2);padding:2px 8px;border-radius:20px;}
 
+.gsearch{margin:10px 14px 4px;padding:6px 10px;}
+.gsearch input{min-width:0;}
+.gs-item{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;margin:0 0 8px;cursor:pointer;color:var(--ink-dim);font-family:var(--font-body);font-size:13.5px;line-height:1.5;}
+.gs-item:hover,.gs-item:focus-visible{border-color:var(--ember);color:var(--ink);}
+.gs-item .gs-sec{display:block;font-family:var(--font-mono);font-size:11px;color:var(--ember);margin-bottom:2px;}
+.gs-item mark{background:none;color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--ember);text-underline-offset:2px;}
+.gs-hit{outline:2px solid var(--ember);outline-offset:4px;border-radius:3px;}
 /* ---------- buttons ---------- */
 .btn{
   background:var(--panel-2);color:var(--ink);border:1px solid var(--line);padding:9px 16px;
@@ -453,8 +460,13 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <div class="brandblock">
     <div class="brand"><span class="dot"></span> VATRA</div>
     <div class="tagline">Enciclopedia supraviețuirii · off-line</div>
-    <div class="tagline">v1.0.2 · actualizat 2026-10-11</div>
+    <div class="tagline">v1.0.3 · actualizat 2026-10-11</div>
     <div class="clock"><span>UTC <b id="utcClock">--:--:--</b></span><span id="localClock">local --:--</span></div>
+  </div>
+
+  <div class="searchbox gsearch" role="search">
+    <span class="ico" aria-hidden="true">⌕</span>
+    <input type="search" id="gSearch" aria-label="Caută în tot ghidul" aria-keyshortcuts="/" autocomplete="off" placeholder="Caută în ghid…  ( / )">
   </div>
 
   <div class="navgroup">
@@ -528,6 +540,13 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 </nav>
 
 <main id="main">
+<section class="section" id="sec-cautare" aria-labelledby="gsTitle">
+  <div class="eyebrow">Căutare în tot ghidul</div>
+  <h2 id="gsTitle">Rezultate căutare</h2>
+  <p class="lede" id="gsInfo" role="status" aria-live="polite">Scrie cel puțin două litere în câmpul „Caută în tot ghidul”. Diacriticele sunt ignorate.</p>
+  <div class="qlist" id="gsList"></div>
+</section>
+
 <section class="section active" id="sec-acasa">
   <div class="hero">
     <div class="callout"><span class="dot"></span> GHID COMPLET · OFF-LINE · FĂRĂ CONT · FĂRĂ URMĂRIRE</div>
@@ -1529,7 +1548,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
       <input type="file" id="noteImportFile" accept="application/json" style="display:none;">
     </div>
     <div id="noteStatus" style="font-size:12px;color:var(--ink-faint);"></div>
-    <dl id="noteList" style="margin:10px 0 0;"></dl>
+    <div id="noteList" style="margin:10px 0 0;"></div>
   </div>
 </section>
 
@@ -1562,7 +1581,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     </div>
   </div>
   <div style="margin-top:18px;font-size:11.5px;color:var(--ink-faint);line-height:1.7;">
-    <b style="color:var(--ink-dim);">Istoric</b> — <span class="mono">v1.0.2</span> (2026-10-11): salvare automată locală a trusei, notițelor, progresului și temei; politică CSP cu hash pentru script. <span class="mono">v1.0.1</span> (2026-10-11): titlul se afișează fără caractere aleatoare, structură de titluri și repere corectate (accesibilitate), politică CSP, date despre urși și legislație actualizate cu surse. <span class="mono">v1.0</span> (2026-08-06): versiune inițială, 21 de secțiuni, calculatoare de apă/calorii/hipotermie/hipertermie/azimut, busolă live, trainer SOS, test de cunoștințe cu repetiție spațiată, trusă de urgență interactivă, glosar cu notițe proprii.
+    <b style="color:var(--ink-dim);">Istoric</b> — <span class="mono">v1.0.3</span> (2026-10-11): căutare în tot ghidul (scurtătura „/”), titluri de nivel 1 pe toate secțiunile, tabele derulabile accesibile de la tastatură. <span class="mono">v1.0.2</span> (2026-10-11): salvare automată locală a trusei, notițelor, progresului și temei; politică CSP cu hash pentru script. <span class="mono">v1.0.1</span> (2026-10-11): titlul se afișează fără caractere aleatoare, structură de titluri și repere corectate (accesibilitate), politică CSP, date despre urși și legislație actualizate cu surse. <span class="mono">v1.0</span> (2026-08-06): versiune inițială, 21 de secțiuni, calculatoare de apă/calorii/hipotermie/hipertermie/azimut, busolă live, trainer SOS, test de cunoștințe cu repetiție spațiată, trusă de urgență interactivă, glosar cu notițe proprii.
   </div>
   <div class="legal">
     Conținut educațional general, verificat la 2026-08-06 (actualizat la 2026-10-11) — dar nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală, sau evaluarea medicală de specialitate. Într-o urgență reală, în România, sună <b>112</b>. Fără cookie-uri, fără analytics, fără apeluri către niciun server — tot ce vezi rulează local, în browserul tău, iar starea introdusă (bife, note, scoruri) există doar cât ține fila deschisă, dacă n-o exporți.
@@ -2204,6 +2223,7 @@ function renderNotes(){
     return;
   }
   list.innerHTML = '';
+  const noteDl = document.createElement('dl'); noteDl.style.margin = '0'; list.appendChild(noteDl);
   personalNotes.forEach((n,i)=>{
     const item = document.createElement('div');
     item.className = 'glossitem';
@@ -2218,7 +2238,7 @@ function renderNotes(){
     const dd = document.createElement('dd');
     dd.textContent = n.def; // textContent, deliberat — chiar dacă notițele ajung exportate/reimportate de altcineva, nu se execută niciodată ca HTML
     item.appendChild(dt); item.appendChild(dd);
-    list.appendChild(item);
+    noteDl.appendChild(item);
   });
 }
 function addNote(){
@@ -2476,21 +2496,109 @@ async function checkFileIntegrity(){
 /* ============================================================
    NAV / DRAWER / TEMĂ / CEAS / HERO
    ============================================================ */
+function showSection(sec, btn){
+  $$('.section').forEach(s=>s.classList.remove('active'));
+  const target = document.getElementById('sec-'+sec);
+  if(target) target.classList.add('active');
+  const br = document.querySelector('.brandblock .brand');
+  if(br){ if(sec!=='acasa'){ br.setAttribute('role','heading'); br.setAttribute('aria-level','1'); } else { br.removeAttribute('role'); br.removeAttribute('aria-level'); } }
+  $$('.navlink').forEach(b=>b.classList.toggle('active', b===btn));
+  updateReportLink(target);
+  stopSOS();
+  if(sec!=='navigatie') stopCompass();
+  window.scrollTo(0,0);
+  closeDrawer();
+  return target;
+}
 function initNav(){
   $$('.navlink').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const sec = btn.dataset.sec;
-      $$('.section').forEach(s=>s.classList.remove('active'));
-      const target = document.getElementById('sec-'+sec);
-      if(target) target.classList.add('active');
-      $$('.navlink').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      updateReportLink(target);
-      stopSOS();
-      if(sec!=='navigatie') stopCompass();
-      window.scrollTo(0,0);
-      closeDrawer();
+    btn.addEventListener('click', ()=>{ showSection(btn.dataset.sec, btn); });
+  });
+}
+/* ---------- căutare în tot ghidul ---------- */
+let gsIndex = null;
+const gsNorm = s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function gsBuild(){
+  gsIndex = [];
+  $$('.section').forEach(sec=>{
+    if(sec.id==='sec-cautare') return;
+    const id = sec.id.replace('sec-','');
+    const nl = document.querySelector('.navlink[data-sec="'+id+'"]');
+    const label = nl ? nl.textContent.trim() : (sec.querySelector('h2')?.textContent||id);
+    sec.querySelectorAll('h2,h3,h4,p,li,td,dd,dt,.note,.lede').forEach(el=>{
+      if(el.querySelector('p,li,td,dd,dt,h3,h4,.note')) return;
+      if(el.closest('input,textarea,select,script,style')) return;
+      const text = el.textContent.replace(/\s+/g,' ').trim();
+      if(text.length < 3) return;
+      gsIndex.push({sec:id, label, el, text, n:gsNorm(text), head:/^H[234]$/.test(el.tagName)});
     });
+  });
+}
+function gsRender(q){
+  const list = $('#gsList'), info = $('#gsInfo');
+  list.textContent = '';
+  const nq = gsNorm(q.trim());
+  if(nq.length < 2){ info.textContent = 'Scrie cel puțin două litere în câmpul „Caută în tot ghidul”. Diacriticele sunt ignorate.'; return; }
+  if(!gsIndex) gsBuild();
+  const words = nq.split(/\s+/).filter(Boolean);
+  const hits = gsIndex.filter(e=>words.every(w=>e.n.indexOf(w)!==-1));
+  hits.sort((a,b)=>(b.head-a.head)||(a.n.indexOf(words[0])-b.n.indexOf(words[0])));
+  const shown = hits.slice(0,40);
+  info.textContent = hits.length ? (hits.length+(hits.length===1?' rezultat':' rezultate')+(hits.length>shown.length?' (primele '+shown.length+')':'')+' pentru „'+q.trim()+'”.') : 'Niciun rezultat pentru „'+q.trim()+'”. Încearcă un cuvânt mai scurt sau altă formulare.';
+  shown.forEach(e=>{
+    const b = document.createElement('button'); b.type='button'; b.className='gs-item';
+    const lab = document.createElement('span'); lab.className='gs-sec'; lab.textContent = e.label; b.appendChild(lab);
+    let start = Math.max(0, e.n.indexOf(words[0]) - 50);
+    const txt = e.text.length===e.n.length ? e.text : e.text; // NFD poate schimba lungimea doar pentru caractere compuse rare
+    const piece = txt.slice(start, start+160);
+    const np = gsNorm(piece);
+    const frag = document.createDocumentFragment();
+    if(start>0) frag.appendChild(document.createTextNode('…'));
+    if(np.length===piece.length){
+      const re = words.map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
+      let last = 0; const rx = new RegExp(re,'g'); let m;
+      while((m = rx.exec(np)) && m[0].length){
+        if(m.index>last) frag.appendChild(document.createTextNode(piece.slice(last,m.index)));
+        const mk = document.createElement('mark'); mk.textContent = piece.slice(m.index, m.index+m[0].length); frag.appendChild(mk);
+        last = m.index+m[0].length;
+      }
+      frag.appendChild(document.createTextNode(piece.slice(last)));
+    } else frag.appendChild(document.createTextNode(piece));
+    if(start+160<txt.length) frag.appendChild(document.createTextNode('…'));
+    b.appendChild(frag);
+    b.addEventListener('click', ()=>{
+      const nl = document.querySelector('.navlink[data-sec="'+e.sec+'"]');
+      showSection(e.sec, nl);
+      e.el.scrollIntoView({block:'center'});
+      e.el.classList.add('gs-hit'); setTimeout(()=>e.el.classList.remove('gs-hit'), 2500);
+    });
+    list.appendChild(b);
+  });
+}
+function initScrollRegions(){
+  $$('.tbl-wrap').forEach((w,i)=>{ w.setAttribute('tabindex','0'); w.setAttribute('role','region'); if(!w.getAttribute('aria-label')){ const sec = w.closest('.section'); const h = sec && sec.querySelector('h2'); w.setAttribute('aria-label','Tabel '+(i+1)+(h?' — '+h.textContent.trim():'')); } });
+}
+function initGlobalSearch(){
+  const inp = $('#gSearch');
+  let t = null;
+  inp.addEventListener('input', ()=>{
+    clearTimeout(t);
+    t = setTimeout(()=>{
+      if(inp.value.trim().length < 2) return;
+      showSection('cautare', null);
+      gsRender(inp.value);
+    }, 200);
+  });
+  inp.addEventListener('keydown', e=>{
+    if(e.key==='Enter'){ e.preventDefault(); clearTimeout(t); if(inp.value.trim().length>=2){ showSection('cautare', null); gsRender(inp.value); } }
+    if(e.key==='Escape'){ inp.value=''; gsRender(''); }
+  });
+  document.addEventListener('keydown', e=>{
+    if(e.key==='/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement||{}).tagName||'')){
+      e.preventDefault();
+      if(window.matchMedia && window.matchMedia('(max-width:980px)').matches) openDrawer();
+      inp.focus();
+    }
   });
 }
 function openDrawer(){
@@ -2563,6 +2671,8 @@ function init(){
   // Navigare, sertar, temă, ceas, titlu
   restoreLocal();
   initNav();
+  initGlobalSearch();
+  initScrollRegions();
   initDrawer();
   initTheme();
   initAutosave();
