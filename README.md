@@ -17,4 +17,6 @@ Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, 
 ## Licență
 Nu este declarată o licență în aplicație; nu există fișier `LICENSE` (decizia autorului).
 
+Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indicațiile medicale/de supraviețuire (inclusiv testul universal de comestibilitate, marcat „doar plante, ultimă soluție”) rămân conținut al autorului, cu disclaimerul din pagină și de mai sus.
+
 Audit: 2026-10-10
