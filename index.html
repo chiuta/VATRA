@@ -2,6 +2,7 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VATRA — Enciclopedia supraviețuirii</title>
 <meta name="description" content="Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.">
@@ -399,7 +400,7 @@ label{display:block;font-size:11px;color:var(--ink-faint);letter-spacing:.05em;t
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:34px 44px 50px;max-width:920px;}
 footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px;}
-footer h5{font-family:var(--font-mono);color:var(--moss);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;}
+footer h3{font-family:var(--font-mono);color:var(--moss);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;}
 footer p,footer li{font-size:12.5px;color:var(--ink-dim);}
 footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
 footer a{color:var(--ink-dim);text-decoration:none;}
@@ -440,11 +441,11 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 <body>
 <a href="#main" class="skip-link">Sări la conținut</a>
 
-<div class="topbar">
+<header class="topbar">
   <button id="drawerBtn" aria-label="Deschide meniul" aria-expanded="false">☰</button>
   <div class="brand">VATRA</div>
   <button id="themeBtnMobile" aria-label="Comută tema">◐</button>
-</div>
+</header>
 <div class="scrim" id="scrim"></div>
 
 <div class="shell">
@@ -452,7 +453,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <div class="brandblock">
     <div class="brand"><span class="dot"></span> VATRA</div>
     <div class="tagline">Enciclopedia supraviețuirii · off-line</div>
-    <div class="tagline">v1.0 · verificat 2026-08-06</div>
+    <div class="tagline">v1.0.1 · actualizat 2026-10-11</div>
     <div class="clock"><span>UTC <b id="utcClock">--:--:--</b></span><span id="localClock">local --:--</span></div>
   </div>
 
@@ -1299,7 +1300,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 
   <h3><span class="n">01</span>Ursul brun</h3>
   <div class="panel panel-ember"><span class="hazard h-ridicat">risc ridicat, în creștere</span>
-    <p style="font-size:13.5px;margin:10px 0 8px;">România are, de departe, cea mai mare populație de urși bruni din Uniunea Europeană — un studiu genetic amplu (24.000 de mostre ADN din 25 de județe, 2022–2025, prezentat de Ministerul Mediului în aprilie 2025) a estimat între <b>10.419 și 12.770 de exemplare</b>, mult peste populația „optimă" indicată de specialiști (~4.000). Doar între februarie 2024 și martie 2025, dispecerii 112 au preluat 5.553 de apeluri legate de prezența urșilor, dintre care 486 semnalau atacuri — iar cadrul legal privind intervenția a fost modificat din nou în mai 2026.</p>
+    <p style="font-size:13.5px;margin:10px 0 8px;">România are, de departe, cea mai mare populație de urși bruni din Uniunea Europeană — un studiu genetic amplu (24.000 de mostre ADN din 25 de județe, 2022–2025, prezentat de Ministerul Mediului în aprilie 2025) a estimat între <b>10.419 și 12.770 de exemplare</b>, mult peste populația „optimă" indicată de specialiști (~4.000). Doar între februarie 2024 și martie 2025, dispecerii 112 au preluat 5.553 de apeluri legate de prezența urșilor, dintre care 486 semnalau atacuri — iar cadrul legal privind intervenția (cote de prevenție și intervenție, OUG nr. 60/2025 din 6 noiembrie 2025 și legea care i-a urmat) s-a schimbat de mai multe ori și poate fi modificat din nou: verifică versiunea în vigoare pe <span class="mono">legislatie.just.ro</span>. Sursă pentru estimare: <a href="https://agerpres.ro/economic/2025/04/10/mircea-fechet-in-romania-sunt-intre-10-419-si-12-770-de-ursi-bruni-numarul-optim-este-de-4-000--1439444" target="_blank" rel="noopener">AGERPRES, 10 aprilie 2025</a>.</p>
     <h4>Dacă întâlnești un urs</h4>
     <ul style="font-size:13.5px;margin:0;padding-left:18px;color:var(--ink-dim);">
       <li>Fă zgomot din timp pe traseu (vorbă, clopoțel) — un urs care te aude de departe se retrage aproape mereu singur.</li>
@@ -1533,12 +1534,12 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 <footer>
   <div class="fgrid">
     <div>
-      <h5>Vatra</h5>
+      <h3>Vatra</h3>
       <p>Un ghid de referință despre supraviețuire, într-un singur fișier HTML — fără server, fără cont, fără telemetrie. Se deschide la fel de bine offline ca online, azi sau peste zece ani.</p>
       <p style="margin-top:10px;">Construit în spiritul <b>trade-free</b>: cunoașterea de supraviețuire, cu atât mai puțin, n-ar trebui să aibă nevoie de intermediari — nici comerciali, nici birocratici — între tine și ea.</p>
     </div>
     <div>
-      <h5>Autor</h5>
+      <h3>Autor</h3>
       <ul>
         <li><a href="https://chiuta.github.io" target="_blank" rel="noopener">chiuta.github.io</a></li>
         <li><a href="https://www.patreon.com/c/alexio_tf" target="_blank" rel="noopener">Patreon — Printre Inteligențe</a></li>
@@ -1547,21 +1548,22 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
       </ul>
     </div>
     <div>
-      <h5>Surse &amp; resurse</h5>
+      <h3>Surse &amp; resurse</h3>
       <ul>
         <li><a href="https://www.salvamontromania.ro" target="_blank" rel="noopener">salvamontromania.ro</a> — salvare montană, buletin avalanșe</li>
         <li><a href="https://www.ro-alert.ro" target="_blank" rel="noopener">ro-alert.ro</a> — alertare populație</li>
         <li><a href="https://www.crucearosie.ro" target="_blank" rel="noopener">crucearosie.ro</a> — cursuri certificate de prim ajutor</li>
         <li><a href="https://cercetasi.ro" target="_blank" rel="noopener">cercetasi.ro</a> — educație outdoor pentru tineri</li>
+        <li><a href="https://agerpres.ro/economic/2025/04/10/mircea-fechet-in-romania-sunt-intre-10-419-si-12-770-de-ursi-bruni-numarul-optim-este-de-4-000--1439444" target="_blank" rel="noopener">AGERPRES</a> — estimarea populației de urși (10 aprilie 2025)</li>
         <li>US Army <span class="mono">FM 21-76</span> — manual de supraviețuire, domeniu public</li>
       </ul>
     </div>
   </div>
   <div style="margin-top:18px;font-size:11.5px;color:var(--ink-faint);line-height:1.7;">
-    <b style="color:var(--ink-dim);">Istoric</b> — <span class="mono">v1.0</span> (2026-08-06): versiune inițială, 21 de secțiuni, calculatoare de apă/calorii/hipotermie/hipertermie/azimut, busolă live, trainer SOS, test de cunoștințe cu repetiție spațiată, trusă de urgență interactivă, glosar cu notițe proprii.
+    <b style="color:var(--ink-dim);">Istoric</b> — <span class="mono">v1.0.1</span> (2026-10-11): titlul se afișează fără caractere aleatoare, structură de titluri și repere corectate (accesibilitate), politică CSP, date despre urși și legislație actualizate cu surse. <span class="mono">v1.0</span> (2026-08-06): versiune inițială, 21 de secțiuni, calculatoare de apă/calorii/hipotermie/hipertermie/azimut, busolă live, trainer SOS, test de cunoștințe cu repetiție spațiată, trusă de urgență interactivă, glosar cu notițe proprii.
   </div>
   <div class="legal">
-    Conținut educațional general, verificat la 2026-08-06 — dar nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală, sau evaluarea medicală de specialitate. Într-o urgență reală, în România, sună <b>112</b>. Fără cookie-uri, fără analytics, fără apeluri către niciun server — tot ce vezi rulează local, în browserul tău, iar starea introdusă (bife, note, scoruri) există doar cât ține fila deschisă, dacă n-o exporți.
+    Conținut educațional general, verificat la 2026-08-06 (actualizat la 2026-10-11) — dar nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală, sau evaluarea medicală de specialitate. Într-o urgență reală, în România, sună <b>112</b>. Fără cookie-uri, fără analytics, fără apeluri către niciun server — tot ce vezi rulează local, în browserul tău, iar starea introdusă (bife, note, scoruri) există doar cât ține fila deschisă, dacă n-o exporți.
   </div>
 </footer>
 </main>
@@ -2493,18 +2495,23 @@ function scrambleIn(el){
   if(!el) return;
   const final = el.textContent;
   if(reduceMotion){ el.textContent = final; return; }
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  // Efect de revelare: textul final este mereu în DOM; literele încă nerevelate sunt doar transparente
+  // (fără caractere aleatoare, ca titlul să rămână citibil pentru cititoarele de ecran și în capturi).
   const len = final.length;
   const totalFrames = len*2.2;
   let frame=0;
+  const spans = [];
+  el.textContent = '';
+  for(let i=0;i<len;i++){
+    const sp = document.createElement('span');
+    sp.textContent = final[i];
+    sp.style.opacity = '0';
+    sp.style.transition = 'opacity .18s';
+    el.appendChild(sp); spans.push(sp);
+  }
   function tick(){
     const revealCount = Math.floor((frame/totalFrames)*len);
-    let out='';
-    for(let i=0;i<len;i++){
-      if(final[i]===' '){ out+=' '; continue; }
-      out += (i<revealCount) ? final[i] : chars[Math.floor(Math.random()*chars.length)];
-    }
-    el.textContent = out;
+    for(let i=0;i<len;i++){ if(i<revealCount) spans[i].style.opacity='1'; }
     frame++;
     if(frame<=totalFrames){ setTimeout(tick,32); }
     else { el.textContent = final; }

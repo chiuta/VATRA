@@ -4,6 +4,8 @@
 
 ![VATRA — captură de ecran / screenshot](screenshot.png)
 
+**Ultima actualizare:** 11 octombrie 2026 · versiune 1.0.1
+
 
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
 
@@ -13,10 +15,10 @@ Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română
 Deschide `index.html` în browser (sau varianta publicată prin GitHub Pages); funcționează offline. Temă „Noapte”/„Zi” în bara laterală.
 
 ## Date și confidențialitate
-Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, fără `fetch`/CDN/fonturi externe) și nu folosește `localStorage`; bifele, notițele proprii și scorurile există doar cât timp fila e deschisă. Geolocalizarea (butonul din calculatorul de azimut) se folosește doar la cerere, local. Linkurile externe (Salvamont, RO-ALERT, Crucea Roșie etc.) se deschid doar la click. Nu are CSP.
+Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, fără `fetch`/CDN/fonturi externe) și nu folosește `localStorage`; bifele, notițele proprii și scorurile există doar cât timp fila e deschisă. Geolocalizarea (butonul din calculatorul de azimut) se folosește doar la cerere, local. Linkurile externe (Salvamont, RO-ALERT, Crucea Roșie etc.) se deschid doar la click. Are politică CSP strictă (meta): fără conexiuni de rețea (`connect-src 'none'`), doar scripturi/stiluri inline.
 
 ## Limitări
-- Surse citate parțial (fără trimiteri bibliografice detaliate); unele cifre (ex. populația de urși, modificări legislative) nu sunt însoțite de link.
+- Surse citate parțial (fără trimiteri bibliografice detaliate); estimarea populației de urși are acum sursă (AGERPRES, 10 aprilie 2025); legislația privind intervenția asupra urșilor se schimbă des (OUG 60/2025 și legea ulterioară) și nu este citată articol cu articol: verifică legislatie.just.ro.
 - Testul de comestibilitate și procedurile de prim ajutor sunt rezumate generale, nu protocoale medicale.
 
 ## Licență
@@ -25,3 +27,12 @@ Nu este declarată o licență în aplicație; nu există fișier `LICENSE` (dec
 Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indicațiile medicale/de supraviețuire (inclusiv testul universal de comestibilitate, marcat „doar plante, ultimă soluție”) rămân conținut al autorului, cu disclaimerul din pagină și de mai sus.
 
 Audit: 2026-10-10
+
+## Istoric / Changelog
+
+### 1.0.1 — 11 octombrie 2026
+- Reparat: titlul din hero nu mai afișează caractere aleatoare în timpul animației (efect de revelare; textul final este mereu în pagină).
+- Reparat: accesibilitate: antetul mobil este `<header>`, titlurile din subsol sunt h3 (ordine corectă); 0 violări axe-core la 1280 și 360 px.
+- Adăugat: politică CSP strictă; versiune 1.0.1 afișată în bara laterală.
+- Actualizat: date despre urși verificate la 11.10.2026 (sursă: AGERPRES, 10.04.2025); formularea despre legislație nu mai afirmă o modificare neverificată din mai 2026. Surse verificate la 11.10.2026.
+
