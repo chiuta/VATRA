@@ -1,5 +1,10 @@
 # VATRA — Enciclopedia supraviețuirii
 
+**Live / demo:** https://chiuta.github.io/VATRA/
+
+![VATRA — captură de ecran / screenshot](screenshot.png)
+
+
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
 
 **Conținut educațional general; nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală sau evaluarea medicală de specialitate.** În urgență, în România, sună 112. Informațiile din ghid (inclusiv cifre, numere de contact, date despre faună sau legislație) pot deveni depășite; verifică sursele oficiale. Calculatoarele sunt orientative.
