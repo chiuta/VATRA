@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-YhkZ++vHW0waBm5ddEx1tcelj6ClAPIL3rGZ1wd2id8='; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VATRA — Enciclopedia supraviețuirii</title>
 <meta name="description" content="Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.">
@@ -453,7 +453,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <div class="brandblock">
     <div class="brand"><span class="dot"></span> VATRA</div>
     <div class="tagline">Enciclopedia supraviețuirii · off-line</div>
-    <div class="tagline">v1.0.1 · actualizat 2026-10-11</div>
+    <div class="tagline">v1.0.2 · actualizat 2026-10-11</div>
     <div class="clock"><span>UTC <b id="utcClock">--:--:--</b></span><span id="localClock">local --:--</span></div>
   </div>
 
@@ -518,6 +518,8 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     <button type="button" id="backupExportBtn" style="display:block;width:100%;margin-top:6px;background:none;border:none;color:var(--ink-faint);text-decoration:underline;cursor:pointer;font-size:10px;font-family:inherit;">💾 Exportă tot progresul</button>
     <button type="button" id="backupImportBtn" style="display:block;width:100%;margin-top:6px;background:none;border:none;color:var(--ink-faint);text-decoration:underline;cursor:pointer;font-size:10px;font-family:inherit;">📥 Importă progresul</button>
     <input type="file" id="backupImportFile" accept="application/json" style="display:none;">
+    <div style="font-size:9.5px;color:var(--ink-faint);margin-top:6px;text-align:center;">Bifele, notițele, progresul testului și tema se salvează automat în acest browser.</div>
+    <button type="button" id="backupForgetBtn" style="display:block;width:100%;margin-top:4px;background:none;border:none;color:var(--ink-faint);text-decoration:underline;cursor:pointer;font-size:10px;font-family:inherit;">🗑 Șterge datele salvate în browser</button>
     <div id="backupStatus" aria-live="polite" style="font-size:9.5px;color:var(--ink-faint);margin-top:4px;word-break:break-all;"></div>
     <button type="button" id="integrityCheckBtn" style="display:block;width:100%;margin-top:6px;background:none;border:none;color:var(--ink-faint);text-decoration:underline;cursor:pointer;font-size:10px;font-family:inherit;">🔒 Verifică integritatea fișierului</button>
     <div id="integrityResult" aria-live="polite" style="font-size:9.5px;color:var(--ink-faint);margin-top:4px;word-break:break-all;"></div>
@@ -1560,7 +1562,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     </div>
   </div>
   <div style="margin-top:18px;font-size:11.5px;color:var(--ink-faint);line-height:1.7;">
-    <b style="color:var(--ink-dim);">Istoric</b> — <span class="mono">v1.0.1</span> (2026-10-11): titlul se afișează fără caractere aleatoare, structură de titluri și repere corectate (accesibilitate), politică CSP, date despre urși și legislație actualizate cu surse. <span class="mono">v1.0</span> (2026-08-06): versiune inițială, 21 de secțiuni, calculatoare de apă/calorii/hipotermie/hipertermie/azimut, busolă live, trainer SOS, test de cunoștințe cu repetiție spațiată, trusă de urgență interactivă, glosar cu notițe proprii.
+    <b style="color:var(--ink-dim);">Istoric</b> — <span class="mono">v1.0.2</span> (2026-10-11): salvare automată locală a trusei, notițelor, progresului și temei; politică CSP cu hash pentru script. <span class="mono">v1.0.1</span> (2026-10-11): titlul se afișează fără caractere aleatoare, structură de titluri și repere corectate (accesibilitate), politică CSP, date despre urși și legislație actualizate cu surse. <span class="mono">v1.0</span> (2026-08-06): versiune inițială, 21 de secțiuni, calculatoare de apă/calorii/hipotermie/hipertermie/azimut, busolă live, trainer SOS, test de cunoștințe cu repetiție spațiată, trusă de urgență interactivă, glosar cu notițe proprii.
   </div>
   <div class="legal">
     Conținut educațional general, verificat la 2026-08-06 (actualizat la 2026-10-11) — dar nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală, sau evaluarea medicală de specialitate. Într-o urgență reală, în România, sună <b>112</b>. Fără cookie-uri, fără analytics, fără apeluri către niciun server — tot ce vezi rulează local, în browserul tău, iar starea introdusă (bife, note, scoruri) există doar cât ține fila deschisă, dacă n-o exporți.
@@ -2393,6 +2395,41 @@ function applyBackupData(data){
   if(data.srs){ srsState = sanitizeSrs(data.srs); parts.push('progres test'); }
   return parts;
 }
+const LOCAL_KEY = 'vatra:v1';
+let autosaveOn = true;
+function saveLocal(){
+  if(!autosaveOn) return;
+  try{
+    localStorage.setItem(LOCAL_KEY, JSON.stringify({
+      trusa: checklistState, notite: personalNotes, srs: srsState,
+      tema: document.documentElement.getAttribute('data-theme')==='zi' ? 'zi' : 'noapte'
+    }));
+  }catch(e){ /* stocare indisponibilă: datele rămân doar cât timp fila e deschisă */ }
+}
+function restoreLocal(){
+  let saved = null;
+  try{ const raw = localStorage.getItem(LOCAL_KEY); if(raw) saved = JSON.parse(raw); }catch(e){ saved = null; }
+  if(saved && typeof saved === 'object'){
+    try{
+      if(saved.trusa) checklistState = sanitizeChecklist(saved.trusa);
+      if(Array.isArray(saved.notite)) personalNotes = sanitizeNotes(saved.notite);
+      if(saved.srs) srsState = sanitizeSrs(saved.srs);
+    }catch(e){ /* date locale invalide: ignorate */ }
+    if(saved.tema === 'zi' || saved.tema === 'noapte') setTheme(saved.tema);
+  }
+}
+function initAutosave(){
+  let timer = null;
+  const later = ()=>{ clearTimeout(timer); timer = setTimeout(saveLocal, 400); };
+  ['change','input','click'].forEach(ev=>document.addEventListener(ev, later, true));
+  window.addEventListener('pagehide', saveLocal);
+  document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') saveLocal(); });
+  $('#backupForgetBtn').addEventListener('click', ()=>{
+    autosaveOn = false; clearTimeout(timer);
+    try{ localStorage.removeItem(LOCAL_KEY); }catch(e){}
+    $('#backupStatus').textContent = 'Datele salvate în browser au fost șterse; autosalvarea e oprită până la reîncărcarea paginii.';
+  });
+}
 function previewAndApplyBackupFile(file){
   const reader = new FileReader();
   reader.onload = ()=>{
@@ -2524,9 +2561,11 @@ function scrambleIn(el){
    ============================================================ */
 function init(){
   // Navigare, sertar, temă, ceas, titlu
+  restoreLocal();
   initNav();
   initDrawer();
   initTheme();
+  initAutosave();
   initClocks();
   scrambleIn($('#scrambleTitle'));
   updateReportLink($('#sec-acasa'));
