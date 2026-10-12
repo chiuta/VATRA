@@ -4,7 +4,7 @@
 
 ![VATRA — captură de ecran / screenshot](screenshot.png)
 
-**Ultima actualizare:** 11 octombrie 2026 · versiune 1.0.3
+**Versiune:** 1.0.4 · **Ultima actualizare:** 12 octombrie 2026
 
 
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
@@ -30,6 +30,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.0.4 — 2026-10-12
+- Versiunea și data ultimei actualizări sunt afișate în aplicație (bara laterală).
 
 ### 1.0.3 — 11 octombrie 2026 (runda 7)
 - Nou: căutare în tot ghidul (câmp în bara laterală, scurtătura `/`; fără diacritice, rezultate cu fragment și salt la pasajul găsit).
