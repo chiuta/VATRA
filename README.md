@@ -31,7 +31,8 @@ Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, 
 - Testul de comestibilitate și procedurile de prim ajutor sunt rezumate generale, nu protocoale medicale.
 
 ## Licență
-Nu este declarată o licență în aplicație; nu există fișier `LICENSE` (decizia autorului).
+
+MIT — vezi fișierul `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Eventualele biblioteci terțe incluse în fișier își păstrează licențele proprii.
 
 Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indicațiile medicale/de supraviețuire (inclusiv testul universal de comestibilitate, marcat „doar plante, ultimă soluție”) rămân conținut al autorului, cu disclaimerul din pagină și de mai sus.
 
