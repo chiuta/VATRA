@@ -4,7 +4,7 @@
 
 ![VATRA — captură de ecran / screenshot](screenshot.png)
 
-**Versiune:** 1.0.4 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
 
 
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
@@ -14,6 +14,14 @@ Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română
 ## Utilizare
 Caută în tot ghidul din câmpul din bara laterală (scurtătura `/`).
 Deschide `index.html` în browser (sau varianta publicată prin GitHub Pages); funcționează offline. Temă „Noapte”/„Zi” în bara laterală (alegerea se păstrează). Bifele trusei, notițele proprii, progresul testului și tema se salvează automat local în browser (`localStorage`, cheia `vatra:v1`); le poți șterge din bara laterală („Șterge datele salvate în browser”) sau exporta/importa ca fișier.
+
+## Funcții noi (v1.1.0, 14 octombrie 2026)
+
+Fără funcții de învățare noi în această versiune: **repetiția spațiată există deja** (§19 Test de cunoștințe, „Mod: Repetiție spațiată”, cu export/import al progresului) și nu a fost dublată. Singura adăugire este kitul de mai jos.
+
+### Transparență și copie de siguranță (fff-kit)
+
+Un clic (sau Enter) pe versiunea afișată (`v 1.1.0 · 2026-10-14`) deschide fereastra „Transparență”: gazdele de rețea declarate (0 cereri externe), cheile de stocare locală cu dimensiuni, API-urile folosite, mărimea și SHA-256 al fișierului (cu verificator pentru un fișier descărcat) și **copia de siguranță** a datelor aplicației într-un fișier `.fff.json` (opțional criptat cu parolă, AES-GCM 256 / PBKDF2; parola nu poate fi recuperată), import cu confirmare și ștergerea datelor aplicației. Kitul (`fff-kit`, module: core, label, bundle) este lipit în `index.html`, nu face cereri de rețea și nu schimbă datele existente; fără el aplicația funcționează la fel. Copia de siguranță a kitului cuprinde cheia de stocare opțională a aplicației (dacă ai activat păstrarea pe dispozitiv), nu progresul testului, care se exportă prin „Exportă progresul”. Textele kitului sunt în 8 limbi (ro, en, fr, it, es, pt, hu, de); **traducerile fr/it/es/pt/hu/de sunt automate și neverificate nativ**. Interfața aplicației însăși rămâne în română.
 
 ## Date și confidențialitate
 Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, fără `fetch`/CDN/fonturi externe) și nu trimite nimic nicăieri; singura stocare este `localStorage` local (cheia `vatra:v1`, cu bifele trusei, notițele, progresul testului și tema), la fel de privată ca fișierul însuși. Geolocalizarea (butonul din calculatorul de azimut) se folosește doar la cerere, local. Linkurile externe (Salvamont, RO-ALERT, Crucea Roșie etc.) se deschid doar la click. Are politică CSP strictă (meta): fără conexiuni de rețea (`connect-src 'none'`), scriptul permis doar pe bază de hash SHA-256 (fără `unsafe-inline` pentru script), stilurile inline.
@@ -30,6 +38,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.1.0 — 2026-10-14
+- fff-kit: fereastra „Transparență” (clic pe versiune) și copie de siguranță unitară `.fff.json`. Conținutul și repetiția spațiată nu s-au schimbat.
 
 ### 1.0.4 — 2026-10-12
 - Versiunea și data ultimei actualizări sunt afișate în aplicație (bara laterală).

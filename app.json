@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "vatra",
+  "name": "VATRA — Enciclopedia supraviețuirii",
+  "version": "1.1.0",
+  "updated": "2026-10-14",
+  "description": "Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.",
+  "egress": [],
+  "permissions": [
+    "geolocation",
+    "navigator.share",
+    "clipboard",
+    "serviceWorker",
+    "localStorage",
+    "Web Crypto"
+  ],
+  "storageKeys": [],
+  "sizeBytes": 320396,
+  "sha256": "555f048f055f4b7af8bdc095661781124c785acbc6e105ffc8fc9df4b16584e4",
+  "csp": {
+    "present": true,
+    "directives": {
+      "default-src": "'none'",
+      "script-src": "sha256×3",
+      "style-src": "'unsafe-inline'",
+      "img-src": "'self' data: blob:",
+      "font-src": "data:",
+      "media-src": "data: blob:",
+      "connect-src": "'none'",
+      "base-uri": "'none'",
+      "form-action": "'none'",
+      "manifest-src": "'self'",
+      "worker-src": "'self'"
+    },
+    "scriptInline": "hash",
+    "connect": "'none'"
+  },
+  "features": {
+    "export": true,
+    "import": true,
+    "i18n": [],
+    "pwa": {
+      "manifest": true,
+      "serviceWorker": true
+    },
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "kit": {
+    "version": "1.0.0",
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "selfSerializing": true
+}

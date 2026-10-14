@@ -1,0 +1,37 @@
+{
+  "name": "VATRA",
+  "short_name": "VATRA",
+  "description": "Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "ro",
+  "background_color": "#120d09",
+  "theme_color": "#120d09",
+  "categories": [
+    "lifestyle",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "x_fff_pwa": 1
+}
