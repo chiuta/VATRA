@@ -17,8 +17,8 @@
   "storageKeys": [
     "vatra:v1"
   ],
-  "sizeBytes": 323094,
-  "sha256": "81a8139525eadf094eb3e324c98e1dfc26be4a6b61544a03c765c2db81bccc4b",
+  "sizeBytes": 323730,
+  "sha256": "ef6803acc75c9bc8e871591192c417e91bcd79de42bdc4b5172c6f23907bf3eb",
   "csp": {
     "present": true,
     "directives": {
@@ -52,7 +52,7 @@
     ]
   },
   "kit": {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "modules": [
       "core",
       "label",
