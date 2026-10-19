@@ -8,7 +8,7 @@ Idiomas da interface: **Română, English, Français, Italiano, Español, Portug
 
 **Aplicação online / demo:** https://chiuta.github.io/VATRA/
 
-![VATRA — captura de ecrã](screenshot.png)
+![VATRA — captura de ecrã](screenshot.pt.png)
 
 Guia de sobrevivência num único ficheiro HTML (`index.html`), em romeno: ~21 secções (água, fogo, abrigo, alimentação, nós, primeiros socorros, sinalização, navegação sem GPS, meteorologia, ambientes, desastres, fauna perigosa, recursos para a Roménia), kit de emergência interativo, calculadoras (água, calorias, hipotermia/hipertermia, azimute), bússola, glossário e teste de conhecimentos.
 

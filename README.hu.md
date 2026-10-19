@@ -8,7 +8,7 @@ A felület nyelvei: **Română, English, Français, Italiano, Español, Portugu�
 
 **Online alkalmazás / demó:** https://chiuta.github.io/VATRA/
 
-![VATRA — képernyőkép](screenshot.png)
+![VATRA — képernyőkép](screenshot.hu.png)
 
 Túlélési útmutató egyetlen HTML-fájlban (`index.html`), románul: ~21 szakasz (víz, tűz, menedék, élelem, csomók, elsősegély, jelzés, navigáció GPS nélkül, időjárás, élőhelyek, katasztrófák, veszélyes állatok, erőforrások Romániához), interaktív vészhelyzeti készlet, számológépek (víz, kalória, hipotermia/hipertermia, azimut), iránytű, szójegyzék és tudáspróba.
 

@@ -8,7 +8,7 @@ Limbile interfeței: **Română, English, Français, Italiano, Español, Portugu
 
 **Live / demo:** https://chiuta.github.io/VATRA/
 
-![VATRA — captură de ecran / screenshot](screenshot.png)
+![VATRA — captură de ecran / screenshot](screenshot.ro.png)
 
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
 

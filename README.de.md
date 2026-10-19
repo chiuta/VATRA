@@ -8,7 +8,7 @@ Oberflächensprachen: **Română, English, Français, Italiano, Español, Portug
 
 **Online-App / Demo:** https://chiuta.github.io/VATRA/
 
-![VATRA — Screenshot](screenshot.png)
+![VATRA — Screenshot](screenshot.de.png)
 
 Überlebensratgeber in einer einzigen HTML-Datei (`index.html`), auf Rumänisch: ~21 Abschnitte (Wasser, Feuer, Unterkunft, Nahrung, Knoten, Erste Hilfe, Signalisieren, Navigation ohne GPS, Wetter, Lebensräume, Katastrophen, gefährliche Tiere, Ressourcen für Rumänien), interaktives Notfallset, Rechner (Wasser, Kalorien, Unterkühlung/Überhitzung, Azimut), Kompass, Glossar und Wissenstest.
 
