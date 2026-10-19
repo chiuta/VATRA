@@ -22,6 +22,7 @@ export async function launch({w = 1280, h = 800, args = [], perm = [], bypassCSP
   page.on("console", m => { if (m.type() === "error") st.errs.push("console:" + m.text()); });
   page.on("request", r => { if (/^https?:/.test(r.url())) st.net.push(r.url()); });
   await page.addInitScript(() => { window.__csp = []; document.addEventListener("securitypolicyviolation", e => window.__csp.push(e.violatedDirective + " " + e.blockedURI)); });
+  await page.addInitScript(() => { try { localStorage.setItem("vatra:lang", "ro"); } catch (e) {} });
   if (init) await page.addInitScript(init);
   await page.goto("file://" + (file || INDEX));
   return {browser, ctx, page, st};

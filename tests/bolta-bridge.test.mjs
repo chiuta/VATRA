@@ -5,6 +5,7 @@ const [dV, dB] = process.argv.slice(2);
 const b = await chromium.launch({executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"]});
 const ctx = await b.newContext({viewport: {width: 1100, height: 900}, permissions: ["geolocation"], geolocation: {latitude: 45.65791, longitude: 25.60123, accuracy: 10}});
 const net = []; await ctx.route(/^https?:/, r => { net.push(r.request().url()); r.abort(); });
+await ctx.addInitScript(() => { try { localStorage.setItem("vatra:lang", "ro"); } catch (e) {} });
 const p = await ctx.newPage(); const errs = []; p.on("pageerror", e => errs.push(e.message)); p.on("console", m => { if (m.type() === "error" || /Content Security Policy/.test(m.text())) errs.push(m.text()); });
 await p.goto("file://" + dV + "/index.html"); await p.waitForTimeout(3000);
 const setv = (id, v) => p.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event("input", {bubbles: true})); }, [id, v]);
