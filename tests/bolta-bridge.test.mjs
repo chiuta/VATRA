@@ -1,0 +1,27 @@
+// VATRA 1.2.0 — „↗ Cerul de acum, în Bolta”. Copiat în VATRA/tests/bolta-bridge.test.mjs. Rulare: node bolta-bridge.test.mjs <dirVATRA> <dirBolta>
+import {createRequire} from "module"; const require = createRequire("/opt/node-tools/package.json"); const {chromium} = require("playwright");
+let fails = 0, passes = 0; const check = (n, c, x) => { c ? (passes++, console.log("  ok  " + n)) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
+const [dV, dB] = process.argv.slice(2);
+const b = await chromium.launch({executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"]});
+const ctx = await b.newContext({viewport: {width: 1100, height: 900}, permissions: ["geolocation"], geolocation: {latitude: 45.65791, longitude: 25.60123, accuracy: 10}});
+const net = []; await ctx.route(/^https?:/, r => { net.push(r.request().url()); r.abort(); });
+const p = await ctx.newPage(); const errs = []; p.on("pageerror", e => errs.push(e.message)); p.on("console", m => { if (m.type() === "error" || /Content Security Policy/.test(m.text())) errs.push(m.text()); });
+await p.goto("file://" + dV + "/index.html"); await p.waitForTimeout(3000);
+const setv = (id, v) => p.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event("input", {bubbles: true})); }, [id, v]);
+const A = () => p.evaluate(() => { const a = document.getElementById("bearBolta"); return {hid: a.hidden, h: a.getAttribute("href"), rel: a.rel, tg: a.target}; });
+check("fără coordonate: link ascuns, fără href", (await A()).hid === true && (await A()).h === null);
+await setv("bearLat1", "45,6579"); await setv("bearLon1", "25.6012");
+let a = await A();
+check("virgulă zecimală acceptată; ll rotunjit la 2 zecimale; fără t; from=vatra", !a.hid && a.h === "https://chiuta.github.io/apps/Bolta/#sky&ll=45.66,25.60&from=vatra", a);
+check("_blank + noopener", a.tg === "_blank" && /noopener/.test(a.rel));
+await setv("bearLat1", "95"); check("latitudine >90: ascuns", (await A()).hid === true);
+await setv("bearLat1", "-33.8688"); await setv("bearLon1", "151.2093"); a = await A();
+check("emisfera sudică/est: semne păstrate", a.h === "https://chiuta.github.io/apps/Bolta/#sky&ll=-33.87,151.21&from=vatra", a.h);
+await setv("bearLat1", "abc"); check("text invalid: ascuns", (await A()).hid === true);
+await p.evaluate(() => document.getElementById("bearGeoBtn").click()); await p.waitForTimeout(800); a = await A();
+check("după „poziția curentă”: link actualizat", a.h === "https://chiuta.github.io/apps/Bolta/#sky&ll=45.66,25.60&from=vatra", a);
+check("calculatorul de azimut funcționează neschimbat", await (async () => { await setv("bearLat2", "45.36"); await setv("bearLon2", "25.53"); await p.evaluate(() => document.getElementById("bearCalcBtn").click()); return /Azimut: [\d.]+°/.test(await p.evaluate(() => document.getElementById("bearOut").textContent)); })());
+check("0 erori / 0 rețea", errs.length === 0 && net.length === 0, [errs, net]);
+const q = await (await b.newContext()).newPage(); await q.goto("file://" + dB + "/index.html#sky&ll=45.66,25.60&from=vatra"); await q.waitForTimeout(2500);
+check("Bolta: „înapoi” spre VATRA + locația aplicată", await q.evaluate(() => !!document.getElementById("fff-back")));
+await b.close(); console.log(`\n${passes} reușite, ${fails} eșuate`); process.exit(fails ? 1 : 0);

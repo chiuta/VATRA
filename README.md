@@ -4,7 +4,7 @@
 
 ![VATRA — captură de ecran / screenshot](screenshot.png)
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
+**Versiune:** 1.2.0 · **Ultima actualizare:** 19 octombrie 2026
 
 
 Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
@@ -39,6 +39,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.2.0 — 2026-10-19
+- Nou: în calculatorul „Azimut & distanță”, legătura „↗ Cerul de acum, în Bolta” (poziția din câmpuri, rotunjită la ~1 km; deschidere în filă nouă; avertisment de istoric).
 
 ### 1.1.0 — 2026-10-14
 - fff-kit: fereastra „Transparență” (clic pe versiune) și copie de siguranță unitară `.fff.json`. Conținutul și repetiția spațiată nu s-au schimbat.
