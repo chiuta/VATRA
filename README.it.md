@@ -1,0 +1,65 @@
+# VATRA — L'enciclopedia della sopravvivenza
+
+[English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
+
+**Versione:** 1.2.0 · **Ultimo aggiornamento:** 2026-10-19
+
+**Applicazione online / demo:** https://chiuta.github.io/VATRA/
+
+![VATRA — schermata](screenshot.png)
+
+Guida di sopravvivenza in un unico file HTML (`index.html`), in rumeno: ~21 sezioni (acqua, fuoco, riparo, cibo, nodi, primo soccorso, segnalazione, navigazione senza GPS, meteo, ambienti, disastri, fauna pericolosa, risorse per la Romania), kit di emergenza interattivo, calcolatori (acqua, calorie, ipotermia/ipertermia, azimut), bussola, glossario e quiz di verifica.
+
+**Contenuto educativo generale; non sostituisce un corso certificato di primo soccorso o di sopravvivenza, i soccorsi locali o una valutazione medica specialistica.** In caso di emergenza, in Romania, chiama il 112. Le informazioni della guida (comprese cifre, numeri di contatto, dati su fauna o legislazione) possono diventare obsolete; verifica le fonti ufficiali. I calcolatori sono indicativi.
+
+## Utilizzo
+Cerca in tutta la guida dal campo nella barra laterale (scorciatoia `/`).
+Apri `index.html` in un browser (oppure la versione pubblicata tramite GitHub Pages); funziona offline. Tema «Notte»/«Giorno» nella barra laterale (la scelta viene ricordata). Le spunte del kit, le note personali, i progressi del quiz e il tema vengono salvati automaticamente in locale nel browser (`localStorage`, chiave `vatra:v1`); puoi eliminarli dalla barra laterale («Elimina i dati salvati nel browser») oppure esportarli/importarli come file.
+
+## Nuove funzioni (v1.1.0, 14 ottobre 2026)
+
+Nessuna nuova funzione di apprendimento in questa versione: **la ripetizione dilazionata esiste già** (§19 Quiz di verifica, «Modalità: Ripetizione dilazionata», con esportazione/importazione dei progressi) e non è stata duplicata. L'unica aggiunta è il kit qui sotto.
+
+### Trasparenza e copia di sicurezza (fff-kit)
+
+Un clic (o Invio) sulla versione mostrata (`v 1.1.0 · 2026-10-14`) apre la finestra «Trasparenza»: gli host di rete dichiarati (0 richieste esterne), le chiavi di archiviazione locale con le dimensioni, le API usate, la dimensione e lo SHA-256 del file (con un verificatore per un file scaricato) e la **copia di sicurezza** dei dati dell'applicazione in un file `.fff.json` (facoltativamente cifrato con password, AES-GCM 256 / PBKDF2; la password non può essere recuperata), l'importazione con conferma e l'eliminazione dei dati dell'applicazione. Il kit (`fff-kit`, moduli: core, label, bundle) è incollato in `index.html`, non effettua richieste di rete e non modifica i dati esistenti; senza di esso l'applicazione funziona allo stesso modo. La copia di sicurezza del kit comprende la chiave di archiviazione facoltativa dell'applicazione (se hai attivato la conservazione sul dispositivo), non i progressi del quiz, che si esportano con «Esporta i progressi». I testi del kit sono in 8 lingue (ro, en, fr, it, es, pt, hu, de); **le traduzioni fr/it/es/pt/hu/de sono automatiche e non verificate da madrelingua**. L'interfaccia dell'applicazione stessa resta in rumeno.
+
+## Dati e privacy
+Verificato tramite audit: la pagina non effettua richieste di rete (0 richieste al caricamento, nessun `fetch`/CDN/font esterno) e non invia nulla da nessuna parte; l'unica archiviazione è il `localStorage` locale (chiave `vatra:v1`, con le spunte del kit, le note, i progressi del quiz e il tema), privato quanto il file stesso. La geolocalizzazione (il pulsante nel calcolatore di azimut) viene usata solo su richiesta, in locale. I link esterni (Salvamont, RO-ALERT, Croce Rossa ecc.) si aprono solo al clic. Ha una policy CSP rigorosa (meta): nessuna connessione di rete (`connect-src 'none'`), script consentito solo tramite hash SHA-256 (senza `unsafe-inline` per gli script), stili inline.
+
+## Limiti
+- Fonti citate solo in parte (senza riferimenti bibliografici dettagliati); la stima della popolazione di orsi ora ha una fonte (AGERPRES, 10 aprile 2025); la legislazione sull'intervento riguardo agli orsi cambia spesso (OUG 60/2025 e la legge successiva) e non è citata articolo per articolo: verifica legislatie.just.ro.
+- Il test di commestibilità e le procedure di primo soccorso sono riassunti generali, non protocolli medici.
+
+## Licenza
+
+MIT — vedi il file `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Eventuali librerie di terze parti incluse nel file mantengono le proprie licenze.
+
+Il link «Segnala un errore» (GitHub) ora rimanda a `chiuta/vatra`. Le indicazioni mediche/di sopravvivenza (compreso il test universale di commestibilità, contrassegnato «solo piante, ultima risorsa») restano contenuto dell'autore, con l'avvertenza presente nella pagina e qui sopra.
+
+Audit: 2026-10-10
+
+## Cronologia / Changelog
+
+### 1.2.0 — 2026-10-19
+- Novità: nel calcolatore «Azimut e distanza», il link «↗ Il cielo di adesso, in Bolta» (posizione dai campi, arrotondata a ~1 km; apertura in una nuova scheda; avviso sulla cronologia).
+
+### 1.1.0 — 2026-10-14
+- fff-kit: la finestra «Trasparenza» (clic sulla versione) e la copia di sicurezza unificata `.fff.json`. Il contenuto e la ripetizione dilazionata non sono cambiati.
+
+### 1.0.4 — 2026-10-12
+- La versione e la data dell'ultimo aggiornamento sono mostrate nell'applicazione (barra laterale).
+
+### 1.0.3 — 11 ottobre 2026 (round 7)
+- Novità: ricerca in tutta la guida (campo nella barra laterale, scorciatoia `/`; senza distinzione dei diacritici, risultati con frammento e salto al passaggio trovato).
+- Corretto: nelle sezioni diverse da Home la pagina non aveva alcun titolo di livello 1 (axe-core `page-has-heading-one`); ora l'intestazione «VATRA» della barra laterale diventa titolo di livello 1 fuori dalla pagina Home.
+
+### 1.0.2 — 11 ottobre 2026 (round 6)
+- Aggiunto: salvataggio locale automatico di kit, note, progressi del quiz e tema (con pulsante di eliminazione); CSP con `script-src` tramite hash.
+
+### 1.0.1 — 11 ottobre 2026
+- Corretto: il titolo dell'hero non mostra più caratteri casuali durante l'animazione (effetto di rivelazione; il testo finale è sempre nella pagina).
+- Corretto: accessibilità: l'intestazione mobile è un `<header>`, i titoli del piè di pagina sono h3 (ordine corretto); 0 violazioni axe-core a 1280 e 360 px.
+- Aggiunto: policy CSP rigorosa; versione 1.0.1 mostrata nella barra laterale.
+- Aggiornato: dati sugli orsi verificati l'11.10.2026 (fonte: AGERPRES, 10.04.2025); la formulazione sulla legislazione non afferma più una modifica non verificata di maggio 2026. Fonti verificate l'11.10.2026.
+
