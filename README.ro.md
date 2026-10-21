@@ -10,7 +10,9 @@ Limbile interfeței: **Română, English, Français, Italiano, Español, Portugu
 
 ![VATRA — captură de ecran / screenshot](screenshot.ro.png)
 
-Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în română: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
+Ghid de supraviețuire într-un singur fișier HTML (`index.html`), în 8 limbi: ~21 de secțiuni (apă, foc, adăpost, hrană, noduri, prim ajutor, semnalizare, navigație fără GPS, vreme, medii, dezastre, faună periculoasă, resurse pentru România), trusă de urgență interactivă, calculatoare (apă, calorii, hipotermie/hipertermie, azimut), busolă, glosar și test de cunoștințe.
+
+**Limbi:** toate secțiunile ghidului, glosarul și quizul de cunoștințe sunt disponibile în cele 8 limbi; numele proprii oficiale (Salvamont, RO-ALERT etc.), simbolurile Morse, cifrele/codurile și denumirile științifice latine rămân neschimbate. Traducerile sunt automate, neverificate de vorbitori nativi; **conținutul de prim ajutor (RCP, hemoragie/garou, hipotermie, hipertermie, arsuri, mușcături de șarpe/căpușe, șoc), dozele de purificare a apei (iod, clor, SODIS), plantele/ciupercile comestibile și testul de comestibilitate, precum și regulile legale și numerele de urgență din România (112, SMS 113, Salvamont, RO-ALERT) necesită revizie de specialitate**; sunt traduceri fidele, fără sfaturi adăugate. Întrebarea curentă din quiz se actualizează abia la următoarea întrebare după schimbarea limbii.
 
 **Conținut educațional general; nu înlocuiește un curs certificat de prim ajutor sau de supraviețuire, echipa de salvare locală sau evaluarea medicală de specialitate.** În urgență, în România, sună 112. Informațiile din ghid (inclusiv cifre, numere de contact, date despre faună sau legislație) pot deveni depășite; verifică sursele oficiale. Calculatoarele sunt orientative.
 
@@ -24,7 +26,7 @@ Fără funcții de învățare noi în această versiune: **repetiția spațiat�
 
 ### Transparență și copie de siguranță (fff-kit)
 
-Un clic (sau Enter) pe versiunea afișată (`v 1.1.0 · 2026-10-14`) deschide fereastra „Transparență”: gazdele de rețea declarate (0 cereri externe), cheile de stocare locală cu dimensiuni, API-urile folosite, mărimea și SHA-256 al fișierului (cu verificator pentru un fișier descărcat) și **copia de siguranță** a datelor aplicației într-un fișier `.fff.json` (opțional criptat cu parolă, AES-GCM 256 / PBKDF2; parola nu poate fi recuperată), import cu confirmare și ștergerea datelor aplicației. Kitul (`fff-kit`, module: core, label, bundle) este lipit în `index.html`, nu face cereri de rețea și nu schimbă datele existente; fără el aplicația funcționează la fel. Copia de siguranță a kitului cuprinde cheia de stocare opțională a aplicației (dacă ai activat păstrarea pe dispozitiv), nu progresul testului, care se exportă prin „Exportă progresul”. Textele kitului sunt în 8 limbi (ro, en, fr, it, es, pt, hu, de); **traducerile fr/it/es/pt/hu/de sunt automate și neverificate nativ**. Interfața aplicației însăși rămâne în română.
+Un clic (sau Enter) pe versiunea afișată (`v 1.1.0 · 2026-10-14`) deschide fereastra „Transparență”: gazdele de rețea declarate (0 cereri externe), cheile de stocare locală cu dimensiuni, API-urile folosite, mărimea și SHA-256 al fișierului (cu verificator pentru un fișier descărcat) și **copia de siguranță** a datelor aplicației într-un fișier `.fff.json` (opțional criptat cu parolă, AES-GCM 256 / PBKDF2; parola nu poate fi recuperată), import cu confirmare și ștergerea datelor aplicației. Kitul (`fff-kit`, module: core, label, bundle) este lipit în `index.html`, nu face cereri de rețea și nu schimbă datele existente; fără el aplicația funcționează la fel. Copia de siguranță a kitului cuprinde cheia de stocare opțională a aplicației (dacă ai activat păstrarea pe dispozitiv), nu progresul testului, care se exportă prin „Exportă progresul”. Textele kitului sunt în 8 limbi (ro, en, fr, it, es, pt, hu, de); **traducerile fr/it/es/pt/hu/de sunt automate și neverificate nativ**. Interfața și conținutul aplicației sunt disponibile și în cele 8 limbi (vezi nota despre limbi de la început); traducerile conținutului sunt automate, neverificate de vorbitori nativi.
 
 ## Date și confidențialitate
 Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, fără `fetch`/CDN/fonturi externe) și nu trimite nimic nicăieri; singura stocare este `localStorage` local (cheia `vatra:v1`, cu bifele trusei, notițele, progresul testului și tema), la fel de privată ca fișierul însuși. Geolocalizarea (butonul din calculatorul de azimut) se folosește doar la cerere, local. Linkurile externe (Salvamont, RO-ALERT, Crucea Roșie etc.) se deschid doar la click. Are politică CSP strictă (meta): fără conexiuni de rețea (`connect-src 'none'`), scriptul permis doar pe bază de hash SHA-256 (fără `unsafe-inline` pentru script), stilurile inline.
@@ -42,6 +44,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.1 — 2026-10-19
+- Tot ghidul, glosarul și quizul sunt traduse în en, fr, it, es, pt, de, hu (fișierul crește la circa 1,5 MB); interfața nu mai este doar în română. Conținutul medical/de supraviețuire necesită revizie de specialitate.
 
 ### 1.2.0 — 2026-10-19
 - Nou: în calculatorul „Azimut & distanță”, legătura „↗ Cerul de acum, în Bolta” (poziția din câmpuri, rotunjită la ~1 km; deschidere în filă nouă; avertisment de istoric).

@@ -10,7 +10,9 @@ A felület nyelvei: **Română, English, Français, Italiano, Español, Portugu�
 
 ![VATRA — képernyőkép](screenshot.hu.png)
 
-Túlélési útmutató egyetlen HTML-fájlban (`index.html`), románul: ~21 szakasz (víz, tűz, menedék, élelem, csomók, elsősegély, jelzés, navigáció GPS nélkül, időjárás, élőhelyek, katasztrófák, veszélyes állatok, erőforrások Romániához), interaktív vészhelyzeti készlet, számológépek (víz, kalória, hipotermia/hipertermia, azimut), iránytű, szójegyzék és tudáspróba.
+Túlélési útmutató egyetlen HTML-fájlban (`index.html`), 8 nyelven: ~21 szakasz (víz, tűz, menedék, élelem, csomók, elsősegély, jelzés, navigáció GPS nélkül, időjárás, élőhelyek, katasztrófák, veszélyes állatok, erőforrások Romániához), interaktív vészhelyzeti készlet, számológépek (víz, kalória, hipotermia/hipertermia, azimut), iránytű, szójegyzék és tudáspróba.
+
+**Nyelvek:** az útmutató összes szakasza, a szójegyzék és a tudáskvíz mind a 8 nyelven elérhető; a hivatalos tulajdonnevek (Salvamont, RO-ALERT stb.), a morzejelek, a számok/kódok és a latin tudományos nevek változatlanul marad. A fordítások automatikusak, anyanyelvi beszélők nem ellenőrizték; **az elsősegély-tartalom (újraélesztés, vérzés/érszorító, kihűlés, túlmelegedés, égések, kígyó-/kullancsharapás, sokk), a vízfertőtlenítési adagok (jód, klór, SODIS), az ehető növények/gombák és az ehetőségi próba, valamint a romániai jogszabályok és segélyhívó számok (112, 113-as SMS, Salvamont, RO-ALERT) szakmai felülvizsgálatot igényelnek**; hű fordítások, hozzáadott tanács nélkül. A folyamatban lévő kvízkérdés nyelvváltás után csak a következő kérdésnél frissül.
 
 **Általános oktatási tartalom; nem helyettesíti a tanúsított elsősegély- vagy túlélőtanfolyamot, a helyi mentőcsapatot, sem a szakorvosi értékelést.** Vészhelyzetben Romániában hívd a 112-t. Az útmutató információi (beleértve a számadatokat, elérhetőségeket, az állatvilágra vagy a jogszabályokra vonatkozó adatokat) elavulhatnak; ellenőrizd a hivatalos forrásokat. A számológépek tájékoztató jellegűek.
 
@@ -24,7 +26,7 @@ Ebben a verzióban nincs új tanulási funkció: **az elosztott ismétlés már 
 
 ### Átláthatóság és biztonsági mentés (fff-kit)
 
-A megjelenített verzióra (`v 1.1.0 · 2026-10-14`) kattintva (vagy Entert nyomva) megnyílik az „Átláthatóság” ablak: a deklarált hálózati hosztok (0 külső kérés), a helyi tárolókulcsok méretekkel, a használt API-k, a fájl mérete és SHA-256 ujjlenyomata (ellenőrzővel egy letöltött fájlhoz), valamint az alkalmazás adatainak **biztonsági mentése** `.fff.json` fájlba (opcionálisan jelszóval titkosítva, AES-GCM 256 / PBKDF2; a jelszó nem állítható vissza), importálás megerősítéssel és az alkalmazás adatainak törlése. A készlet (`fff-kit`, modulok: core, label, bundle) be van illesztve az `index.html`-be, nem küld hálózati kéréseket, és nem módosítja a meglévő adatokat; nélküle az alkalmazás ugyanúgy működik. A készlet biztonsági mentése tartalmazza az alkalmazás opcionális tárolókulcsát (ha bekapcsoltad az eszközön való megőrzést), a teszt előrehaladását nem, amelyet az „Előrehaladás exportálása” gombbal lehet exportálni. A készlet szövegei 8 nyelven érhetők el (ro, en, fr, it, es, pt, hu, de); **az fr/it/es/pt/hu/de fordítások automatikusak, anyanyelvi beszélők nem ellenőrizték őket**. Maga az alkalmazás felülete továbbra is román nyelvű.
+A megjelenített verzióra (`v 1.1.0 · 2026-10-14`) kattintva (vagy Entert nyomva) megnyílik az „Átláthatóság” ablak: a deklarált hálózati hosztok (0 külső kérés), a helyi tárolókulcsok méretekkel, a használt API-k, a fájl mérete és SHA-256 ujjlenyomata (ellenőrzővel egy letöltött fájlhoz), valamint az alkalmazás adatainak **biztonsági mentése** `.fff.json` fájlba (opcionálisan jelszóval titkosítva, AES-GCM 256 / PBKDF2; a jelszó nem állítható vissza), importálás megerősítéssel és az alkalmazás adatainak törlése. A készlet (`fff-kit`, modulok: core, label, bundle) be van illesztve az `index.html`-be, nem küld hálózati kéréseket, és nem módosítja a meglévő adatokat; nélküle az alkalmazás ugyanúgy működik. A készlet biztonsági mentése tartalmazza az alkalmazás opcionális tárolókulcsát (ha bekapcsoltad az eszközön való megőrzést), a teszt előrehaladását nem, amelyet az „Előrehaladás exportálása” gombbal lehet exportálni. A készlet szövegei 8 nyelven érhetők el (ro, en, fr, it, es, pt, hu, de); **az fr/it/es/pt/hu/de fordítások automatikusak, anyanyelvi beszélők nem ellenőrizték őket**. Az alkalmazás felülete és tartalma szintén elérhető a 8 nyelven (lásd az elején a nyelvi megjegyzést); a tartalom fordításai automatikusak, anyanyelvi beszélők nem ellenőrizték.
 
 ## Adatok és adatvédelem
 Auditálással ellenőrizve: az oldal nem küld hálózati kéréseket (betöltéskor 0 kérés, nincs `fetch`/CDN/külső betűtípus), és sehová nem küld semmit; az egyetlen tárolás a helyi `localStorage` (`vatra:v1` kulcs, a készlet pipáival, a jegyzetekkel, a teszt előrehaladásával és a témával), éppoly privát, mint maga a fájl. A helymeghatározást (az azimut-számológép gombja) csak kérésre, helyben használja. A külső hivatkozások (Salvamont, RO-ALERT, Vöröskereszt stb.) csak kattintásra nyílnak meg. Szigorú CSP-szabályzata van (meta): nincs hálózati kapcsolat (`connect-src 'none'`), szkript csak SHA-256 hash alapján engedélyezett (szkriptekhez nincs `unsafe-inline`), beágyazott stílusok.
@@ -42,6 +44,9 @@ A „Hiba jelentése” hivatkozás (GitHub) mostantól a `chiuta/vatra` tárol�
 Audit: 2026-10-10
 
 ## Előzmények / Changelog
+
+### 1.3.1 — 2026-10-19
+- Az egész útmutató, a szójegyzék és a kvíz le van fordítva en, fr, it, es, pt, de, hu nyelvre (a fájl kb. 1,5 MB-ra nő); a felület már nem csak román. Az orvosi/túlélési tartalom szakmai felülvizsgálatot igényel.
 
 ### 1.2.0 — 2026-10-19
 - Új: az „Azimut és távolság” számológépben a „↗ Az égbolt most, a Boltában” hivatkozás (a mezőkben megadott pozíció, ~1 km-re kerekítve; új lapon nyílik meg; figyelmeztetés az előzményekre).

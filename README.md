@@ -10,7 +10,9 @@ Interface languages: **Română, English, Français, Italiano, Español, Portugu
 
 ![VATRA — screenshot](screenshot.en.png)
 
-A survival guide in a single HTML file (`index.html`), in Romanian: ~21 sections (water, fire, shelter, food, knots, first aid, signalling, navigation without GPS, weather, environments, disasters, dangerous fauna, resources for Romania), an interactive emergency kit, calculators (water, calories, hypothermia/hyperthermia, azimuth), a compass, a glossary and a knowledge quiz.
+A survival guide in a single HTML file (`index.html`), in 8 languages: ~21 sections (water, fire, shelter, food, knots, first aid, signalling, navigation without GPS, weather, environments, disasters, dangerous fauna, resources for Romania), an interactive emergency kit, calculators (water, calories, hypothermia/hyperthermia, azimuth), a compass, a glossary and a knowledge quiz.
+
+**Languages:** all the guide sections, the glossary and the knowledge quiz are available in the 8 languages; official proper names (Salvamont, RO-ALERT, etc.), Morse symbols, numbers/codes and Latin scientific names remain as they are. The translations are automatic and not verified by native speakers; **the first-aid content (CPR, bleeding/tourniquet, hypothermia, hyperthermia, burns, snake/tick bites, shock), the water purification doses (iodine, chlorine, SODIS), the edible plants/mushrooms and the edibility test, and the Romanian legal rules and emergency numbers (112, SMS 113, Salvamont, RO-ALERT) need specialist review**; they are faithful translations with no advice added. The current quiz question is refreshed only at the next question after a language change.
 
 **General educational content; it does not replace a certified first-aid or survival course, the local rescue team or specialist medical assessment.** In an emergency, in Romania, call 112. The information in the guide (including figures, contact numbers, data on fauna or legislation) may become outdated; check the official sources. The calculators are indicative.
 
@@ -24,7 +26,7 @@ No new learning features in this version: **spaced repetition already exists** (
 
 ### Transparency and backup (fff-kit)
 
-A click (or Enter) on the displayed version (`v 1.1.0 · 2026-10-14`) opens the "Transparency" window: the declared network hosts (0 external requests), the local storage keys with sizes, the APIs used, the size and SHA-256 of the file (with a checker for a downloaded file) and the **backup** of the app's data to a `.fff.json` file (optionally encrypted with a password, AES-GCM 256 / PBKDF2; the password cannot be recovered), import with confirmation and deletion of the app's data. The kit (`fff-kit`, modules: core, label, bundle) is pasted into `index.html`, makes no network requests and does not change existing data; without it the app works the same. The kit's backup covers the app's optional storage key (if you enabled keeping data on the device), not the quiz progress, which is exported through "Export progress". The kit's texts are in 8 languages (ro, en, fr, it, es, pt, hu, de); **the fr/it/es/pt/hu/de translations are automatic and not verified by native speakers**. The app's own interface remains in Romanian.
+A click (or Enter) on the displayed version (`v 1.1.0 · 2026-10-14`) opens the "Transparency" window: the declared network hosts (0 external requests), the local storage keys with sizes, the APIs used, the size and SHA-256 of the file (with a checker for a downloaded file) and the **backup** of the app's data to a `.fff.json` file (optionally encrypted with a password, AES-GCM 256 / PBKDF2; the password cannot be recovered), import with confirmation and deletion of the app's data. The kit (`fff-kit`, modules: core, label, bundle) is pasted into `index.html`, makes no network requests and does not change existing data; without it the app works the same. The kit's backup covers the app's optional storage key (if you enabled keeping data on the device), not the quiz progress, which is exported through "Export progress". The kit's texts are in 8 languages (ro, en, fr, it, es, pt, hu, de); **the fr/it/es/pt/hu/de translations are automatic and not verified by native speakers**. The app's own interface and content are also available in the 8 languages (see the language note near the top); the content translations are automatic and not verified by native speakers.
 
 ## Data and privacy
 Verified by audit: the page makes no network requests (0 requests on load, no `fetch`/CDN/external fonts) and sends nothing anywhere; the only storage is local `localStorage` (key `vatra:v1`, with the kit checkmarks, notes, quiz progress and theme), as private as the file itself. Geolocation (the button in the azimuth calculator) is used only on request, locally. External links (Salvamont, RO-ALERT, the Red Cross, etc.) open only on click. It has a strict CSP policy (meta): no network connections (`connect-src 'none'`), script allowed only by SHA-256 hash (no `unsafe-inline` for script), inline styles.
@@ -42,6 +44,9 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.1 — 2026-10-19
+- The whole guide, the glossary and the quiz are translated into en, fr, it, es, pt, de, hu (the file grows to about 1.5 MB); the interface is no longer only Romanian. The medical/survival content needs specialist review.
 
 ### 1.2.0 — 2026-10-19
 - New: in the "Azimuth & distance" calculator, the link "↗ The sky right now, in Bolta" (position from the fields, rounded to ~1 km; opens in a new tab; history warning).
