@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.4 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.3.5 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.5 — 2026-10-22
+- fff-kit 1.1.2: PBKDF2 600 000 de iterații, protecție anti-clickjacking.
 
 ### 1.3.4 — 2026-10-22
 - Confirmarea resetării listei de verificare este un dialog modal tradus, nu confirm() al browserului.
