@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.3.6 · **Última actualización:** 2026-10-22
+**Versión:** 1.3.7 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ El enlace «Informar de un error» (GitHub) apunta ahora a `chiuta/vatra`. Las i
 Auditoría: 2026-10-10
 
 ## Historial / Changelog
+
+### 1.3.7 — 2026-10-22
+- fff-kit 1.1.4: objetivos táctiles y texto mínimo; objetivos táctiles/texto corregidos
 
 ### 1.3.6 — 2026-10-22
 - Accesibilidad: el campo de búsqueda muestra ahora un anillo de foco claro (contraste de al menos 3:1) en los temas noche y día.

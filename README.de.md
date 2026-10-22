@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.6 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 1.3.7 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Der Link „Fehler melden“ (GitHub) verweist jetzt auf `chiuta/vatra`. Die med
 Audit: 2026-10-10
 
 ## Verlauf / Changelog
+
+### 1.3.7 — 2026-10-22
+- fff-kit 1.1.4: Touch-Ziele und Mindestschriftgröße; Touch-Ziele/Text korrigiert
 
 ### 1.3.6 — 2026-10-22
 - Barrierefreiheit: Das Suchfeld zeigt jetzt einen deutlichen Fokusring (Kontrast von mindestens 3:1) im Nacht- und im Tagdesign.

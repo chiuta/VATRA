@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.6 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 1.3.7 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Il link «Segnala un errore» (GitHub) ora rimanda a `chiuta/vatra`. Le indicazi
 Audit: 2026-10-10
 
 ## Cronologia / Changelog
+
+### 1.3.7 — 2026-10-22
+- fff-kit 1.1.4: bersagli touch e testo minimo; bersagli touch/testo corretti
 
 ### 1.3.6 — 2026-10-22
 - Accessibilità: il campo di ricerca mostra ora un anello di focus chiaro (contrasto di almeno 3:1) nei temi notte e giorno.

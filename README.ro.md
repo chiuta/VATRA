@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.6 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.3.7 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.7 — 2026-10-22
+- fff-kit 1.1.4: ținte tactile și text minim; ținte tactile/text corectate
 
 ### 1.3.6 — 2026-10-22
 - Accesibilitate: câmpul de căutare arată acum un inel de focalizare clar (contrast de cel puțin 3:1), în ambele teme, de noapte și de zi.
