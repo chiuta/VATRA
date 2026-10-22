@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.5 · **Last updated:** 2026-10-22
+**Version:** 1.3.6 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.6 — 2026-10-22
+- Accessibility: the search field now shows a clear focus ring (contrast of at least 3:1) in both the night and day themes.
 
 ### 1.3.5 — 2026-10-22
 - fff-kit 1.1.2: PBKDF2 600,000 iterations, anti-clickjacking protection.

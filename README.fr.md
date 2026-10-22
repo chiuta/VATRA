@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.3.5 · **Dernière mise à jour :** 2026-10-22
+**Version :** 1.3.6 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Le lien « Signaler une erreur » (GitHub) pointe désormais vers `chiuta/vatra`
 Audit : 2026-10-10
 
 ## Historique / Changelog
+
+### 1.3.6 — 2026-10-22
+- Accessibilité : le champ de recherche affiche désormais un anneau de focus net (contraste d’au moins 3:1) dans les thèmes nuit et jour.
 
 ### 1.3.5 — 2026-10-22
 - fff-kit 1.1.2 : PBKDF2 à 600 000 itérations, protection anti-clickjacking.
