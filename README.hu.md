@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.3.3 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 1.3.4 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ A „Hiba jelentése” hivatkozás (GitHub) mostantól a `chiuta/vatra` tárol�
 Audit: 2026-10-10
 
 ## Előzmények / Changelog
+
+### 1.3.4 — 2026-10-22
+- Az ellenőrzőlista visszaállításának megerősítése lefordított modális párbeszédablak a böngésző confirm() helyett.
+- Kisegítő lehetőségek: a négy importmező (mentés, ellenőrzőlista, ismétlési előrehaladás, jegyzetek) neve felolvasható a képernyőolvasókkal.
+- Mobil: a szöveg legalább 12 px, a gombok és mezők érintési felülete pedig nagyobb keskeny képernyőn.
 
 ### 1.3.3 — 2026-10-22
 - a román felületen az angolul maradt szószedeti kifejezések, csomók és kvízopciók (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB stb.) most román névvel szerepelnek, az angol kifejezés zárójelben; az olasz navigációban a „Home” helyett „Inizio” áll.

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.3.3 · **Última actualización:** 2026-10-22
+**Versión:** 1.3.4 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ El enlace «Informar de un error» (GitHub) apunta ahora a `chiuta/vatra`. Las i
 Auditoría: 2026-10-10
 
 ## Historial / Changelog
+
+### 1.3.4 — 2026-10-22
+- La confirmación de reinicio de la lista de verificación es un diálogo modal traducido en lugar del confirm() del navegador.
+- Accesibilidad: los cuatro campos de importación (copia de seguridad, lista de verificación, progreso de repaso, notas) tienen nombres anunciados por los lectores de pantalla.
+- Móvil: el texto mide al menos 12 px y los botones y campos tienen áreas táctiles mayores en pantallas estrechas.
 
 ### 1.3.3 — 2026-10-22
 - en la interfaz rumana, los términos del glosario, nudos y opciones del quiz que seguían en inglés (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB, etc.) ahora tienen nombres rumanos con el término inglés entre paréntesis; «Home» en la navegación italiana pasa a «Inizio».

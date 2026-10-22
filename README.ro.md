@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.3 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.3.4 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.4 — 2026-10-22
+- Confirmarea resetării listei de verificare este un dialog modal tradus, nu confirm() al browserului.
+- Accesibilitate: cele patru câmpuri de import (copie de rezervă, listă de verificare, progres repetiții, notițe) au nume anunțate de cititoarele de ecran.
+- Mobil: textul are cel puțin 12 px, iar butoanele și câmpurile au ținte tactile mai mari pe ecrane înguste.
 
 ### 1.3.3 — 2026-10-22
 - în interfața română, termenii din glosar, nodurile și variantele de quiz rămase în engleză (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB etc.) au acum denumiri românești, cu termenul englez între paranteze; „Home” din navigarea în italiană este acum „Inizio”.

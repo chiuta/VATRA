@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.3 · **Last updated:** 2026-10-22
+**Version:** 1.3.4 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.4 — 2026-10-22
+- The checklist-reset confirmation is a translated modal dialog instead of the browser confirm().
+- Accessibility: the four import file fields (backup, checklist, review progress, notes) have names announced by screen readers.
+- Mobile: text is at least 12 px and buttons and fields have larger touch targets on narrow screens.
 
 ### 1.3.3 — 2026-10-22
 - in the Romanian interface, glossary terms, knots and quiz options that were left in English (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB etc.) now have Romanian names with the English term in parentheses; "Home" in the Italian navigation is now "Inizio".

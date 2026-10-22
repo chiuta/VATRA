@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.3 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 1.3.4 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ Il link «Segnala un errore» (GitHub) ora rimanda a `chiuta/vatra`. Le indicazi
 Audit: 2026-10-10
 
 ## Cronologia / Changelog
+
+### 1.3.4 — 2026-10-22
+- La conferma di reimpostazione della checklist è una finestra modale tradotta invece del confirm() del browser.
+- Accessibilità: i quattro campi di importazione (backup, checklist, progressi di ripasso, note) hanno nomi annunciati dagli screen reader.
+- Mobile: il testo è di almeno 12 px e pulsanti e campi hanno aree tattili più grandi sugli schermi stretti.
 
 ### 1.3.3 — 2026-10-22
 - nell'interfaccia rumena i termini del glossario, i nodi e le opzioni del quiz rimasti in inglese (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB, ecc.) hanno ora nomi rumeni con il termine inglese tra parentesi; «Home» nella navigazione italiana diventa «Inizio».

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.3.3 · **Dernière mise à jour :** 2026-10-22
+**Version :** 1.3.4 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ Le lien « Signaler une erreur » (GitHub) pointe désormais vers `chiuta/vatra`
 Audit : 2026-10-10
 
 ## Historique / Changelog
+
+### 1.3.4 — 2026-10-22
+- La confirmation de réinitialisation de la liste de contrôle est une boîte de dialogue modale traduite au lieu du confirm() du navigateur.
+- Accessibilité : les quatre champs d'import (sauvegarde, liste de contrôle, progression des révisions, notes) ont des noms annoncés par les lecteurs d'écran.
+- Mobile : le texte fait au moins 12 px et les boutons et champs ont des cibles tactiles plus grandes sur les écrans étroits.
 
 ### 1.3.3 — 2026-10-22
 - dans l'interface roumaine, les termes du glossaire, nœuds et options de quiz restés en anglais (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB, etc.) ont désormais des noms roumains avec le terme anglais entre parenthèses ; « Home » dans la navigation italienne devient « Inizio ».
