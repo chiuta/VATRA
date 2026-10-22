@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.3.1 · **Última atualização:** 2026-10-19
+**Versão:** 1.3.2 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ A ligação «Comunicar um erro» (GitHub) aponta agora para `chiuta/vatra`. As 
 Auditoria: 2026-10-10
 
 ## Histórico / Changelog
+
+### 1.3.2 — 2026-10-22
+- A meta descrição e a descrição do painel de transparência fff-kit seguem agora o idioma da interface (antes apenas em romeno).
 
 ### 1.3.1 — 2026-10-19
 - Todo o guia, o glossário e o questionário estão traduzidos para en, fr, it, es, pt, de, hu (o ficheiro cresce para cerca de 1,5 MB); a interface já não é só em romeno. O conteúdo médico/de sobrevivência precisa de revisão especializada.

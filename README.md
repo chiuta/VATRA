@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.1 · **Last updated:** 2026-10-19
+**Version:** 1.3.2 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.2 — 2026-10-22
+- Meta description and the description in the fff-kit transparency panel now follow the interface language (previously Romanian only).
 
 ### 1.3.1 — 2026-10-19
 - The whole guide, the glossary and the quiz are translated into en, fr, it, es, pt, de, hu (the file grows to about 1.5 MB); the interface is no longer only Romanian. The medical/survival content needs specialist review.

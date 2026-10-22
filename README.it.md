@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.1 · **Ultimo aggiornamento:** 2026-10-19
+**Versione:** 1.3.2 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Il link «Segnala un errore» (GitHub) ora rimanda a `chiuta/vatra`. Le indicazi
 Audit: 2026-10-10
 
 ## Cronologia / Changelog
+
+### 1.3.2 — 2026-10-22
+- La meta descrizione e la descrizione del pannello di trasparenza fff-kit seguono ora la lingua dell'interfaccia (prima solo in rumeno).
 
 ### 1.3.1 — 2026-10-19
 - Tutta la guida, il glossario e il quiz sono tradotti in en, fr, it, es, pt, de, hu (il file cresce a circa 1,5 MB); l'interfaccia non è più solo in rumeno. Il contenuto medico/di sopravvivenza richiede la revisione di uno specialista.

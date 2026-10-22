@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.3.1 · **Utolsó frissítés:** 2026-10-19
+**Verzió:** 1.3.2 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ A „Hiba jelentése” hivatkozás (GitHub) mostantól a `chiuta/vatra` tárol�
 Audit: 2026-10-10
 
 ## Előzmények / Changelog
+
+### 1.3.2 — 2026-10-22
+- A meta leírás és az fff-kit átláthatósági panel leírása mostantól a felület nyelvét követi (korábban csak románul volt).
 
 ### 1.3.1 — 2026-10-19
 - Az egész útmutató, a szójegyzék és a kvíz le van fordítva en, fr, it, es, pt, de, hu nyelvre (a fájl kb. 1,5 MB-ra nő); a felület már nem csak román. Az orvosi/túlélési tartalom szakmai felülvizsgálatot igényel.

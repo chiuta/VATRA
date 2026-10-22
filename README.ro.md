@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.1 · **Ultima actualizare:** 2026-10-19
+**Versiune:** 1.3.2 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.2 — 2026-10-22
+- Meta descrierea și descrierea din panoul de transparență fff-kit urmează acum limba interfeței (înainte era doar în română).
 
 ### 1.3.1 — 2026-10-19
 - Tot ghidul, glosarul și quizul sunt traduse în en, fr, it, es, pt, de, hu (fișierul crește la circa 1,5 MB); interfața nu mai este doar în română. Conținutul medical/de supraviețuire necesită revizie de specialitate.
