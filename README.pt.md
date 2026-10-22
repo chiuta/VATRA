@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.3.2 · **Última atualização:** 2026-10-22
+**Versão:** 1.3.3 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ A ligação «Comunicar um erro» (GitHub) aponta agora para `chiuta/vatra`. As 
 Auditoria: 2026-10-10
 
 ## Histórico / Changelog
+
+### 1.3.3 — 2026-10-22
+- na interface romena, os termos do glossário, nós e opções do quiz que estavam em inglês (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB, etc.) têm agora nomes romenos com o termo inglês entre parênteses; «Home» na navegação italiana passa a «Inizio».
 
 ### 1.3.2 — 2026-10-22
 - A meta descrição e a descrição do painel de transparência fff-kit seguem agora o idioma da interface (antes apenas em romeno).

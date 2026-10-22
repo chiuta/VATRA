@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.2 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.3.3 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.3 — 2026-10-22
+- în interfața română, termenii din glosar, nodurile și variantele de quiz rămase în engleză (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB etc.) au acum denumiri românești, cu termenul englez între paranteze; „Home” din navigarea în italiană este acum „Inizio”.
 
 ### 1.3.2 — 2026-10-22
 - Meta descrierea și descrierea din panoul de transparență fff-kit urmează acum limba interfeței (înainte era doar în română).

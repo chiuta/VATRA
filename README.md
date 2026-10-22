@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.2 · **Last updated:** 2026-10-22
+**Version:** 1.3.3 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.3 — 2026-10-22
+- in the Romanian interface, glossary terms, knots and quiz options that were left in English (sunk cost, debris hut, clove hitch, rolling hitch, bear spray, lean-to, PLB etc.) now have Romanian names with the English term in parentheses; "Home" in the Italian navigation is now "Inizio".
 
 ### 1.3.2 — 2026-10-22
 - Meta description and the description in the fff-kit transparency panel now follow the interface language (previously Romanian only).
