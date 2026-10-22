@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.3.8 · **Ultimo aggiornamento:** 2026-10-23
+**Versione:** 1.3.9 · **Ultimo aggiornamento:** 2026-10-23
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Il link «Segnala un errore» (GitHub) ora rimanda a `chiuta/vatra`. Le indicazi
 Audit: 2026-10-10
 
 ## Cronologia / Changelog
+
+### 1.3.9 — 2026-10-23
+- fff-kit 1.2.0: la conferma «reimposta la lista di controllo» usa ora il dialogo accessibile comune del kit (FFF.dialog); la copia propria del codice del dialogo (compresa l'alternativa con `confirm` nativo) è stata rimossa. Comportamento e traduzioni invariati.
 
 ### 1.3.7 — 2026-10-22
 - fff-kit 1.1.4: bersagli touch e testo minimo; bersagli touch/testo corretti

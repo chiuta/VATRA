@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.3.8 · **Última actualización:** 2026-10-23
+**Versión:** 1.3.9 · **Última actualización:** 2026-10-23
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ El enlace «Informar de un error» (GitHub) apunta ahora a `chiuta/vatra`. Las i
 Auditoría: 2026-10-10
 
 ## Historial / Changelog
+
+### 1.3.9 — 2026-10-23
+- fff-kit 1.2.0: la confirmación «restablecer la lista de comprobación» usa ahora el diálogo accesible común del kit (FFF.dialog); se ha eliminado la copia propia del código del diálogo (incluida su alternativa con `confirm` nativo). Comportamiento y traducciones sin cambios.
 
 ### 1.3.7 — 2026-10-22
 - fff-kit 1.1.4: objetivos táctiles y texto mínimo; objetivos táctiles/texto corregidos

@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.8 · **Last updated:** 2026-10-23
+**Version:** 1.3.9 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.9 — 2026-10-23
+- fff-kit 1.2.0: the “reset checklist” confirmation now uses the kit's shared accessible dialog (FFF.dialog); the application's own copy of the dialog code (including its native `confirm` fallback) was removed. Behavior and translations are unchanged.
 
 ### 1.3.7 — 2026-10-22
 - fff-kit 1.1.4: touch targets and minimum text size; touch targets/text fixed

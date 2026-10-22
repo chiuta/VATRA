@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.3.8 · **Utolsó frissítés:** 2026-10-23
+**Verzió:** 1.3.9 · **Utolsó frissítés:** 2026-10-23
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ A „Hiba jelentése” hivatkozás (GitHub) mostantól a `chiuta/vatra` tárol�
 Audit: 2026-10-10
 
 ## Előzmények / Changelog
+
+### 1.3.9 — 2026-10-23
+- fff-kit 1.2.0: a „ellenőrzőlista visszaállítása” megerősítés mostantól a készlet közös, akadálymentes párbeszédablakát (FFF.dialog) használja; az alkalmazás saját párbeszédkód-másolata (a natív `confirm` tartalékkal együtt) törölve. A működés és a fordítások változatlanok.
 
 ### 1.3.7 — 2026-10-22
 - fff-kit 1.1.4: érintési célpontok és minimális szövegméret; érintési célpontok/szöveg javítva

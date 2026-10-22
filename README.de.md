@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.8 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 1.3.9 · **Zuletzt aktualisiert:** 2026-10-23
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Der Link „Fehler melden“ (GitHub) verweist jetzt auf `chiuta/vatra`. Die med
 Audit: 2026-10-10
 
 ## Verlauf / Changelog
+
+### 1.3.9 — 2026-10-23
+- fff-kit 1.2.0: Die Bestätigung „Checkliste zurücksetzen“ verwendet jetzt den gemeinsamen barrierefreien Dialog des Kits (FFF.dialog); die eigene Kopie des Dialogcodes (samt nativem `confirm`-Fallback) wurde entfernt. Verhalten und Übersetzungen unverändert.
 
 ### 1.3.7 — 2026-10-22
 - fff-kit 1.1.4: Touch-Ziele und Mindestschriftgröße; Touch-Ziele/Text korrigiert

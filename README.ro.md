@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.8 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 1.3.9 · **Ultima actualizare:** 2026-10-23
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,9 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.9 — 2026-10-23
+- fff-kit 1.2.0: confirmarea „resetează lista de verificare” folosește acum dialogul accesibil comun al kitului (FFF.dialog); copia proprie a codului dialogului (inclusiv alternativa cu `confirm` nativ) a fost eliminată. Comportamentul și traducerile rămân neschimbate.
 
 ### 1.3.7 — 2026-10-22
 - fff-kit 1.1.4: ținte tactile și text minim; ținte tactile/text corectate
