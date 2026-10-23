@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.9 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 1.3.10 · **Ultima actualizare:** 2026-10-23
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 Audit: 2026-10-10
 
 ## Istoric / Changelog
+
+### 1.3.10 — 2026-10-23
+- Indicele de căldură: urmează acum algoritmul NWS complet (formula simplă întâi, regresia Rothfusz doar când ajunge la 80 °F, plus cele două corecții documentate pentru umiditate foarte mică și foarte mare); înainte, valorile din apropierea pragului de 27 °C și la umiditate < 13 % sau > 85 % erau ușor deplasate.
+- Notițe personale: cel mult 500 de notițe (restaurare, import și adăugare manuală), ca un fișier sau o copie ostilă să nu poată îngheța pagina sau umple stocarea.
+- Pe ecrane tactile (`pointer: coarse`) controalele de meniu, temă și limbă au o țintă tactilă de 44 px.
 
 ### 1.3.9 — 2026-10-23
 - fff-kit 1.2.0: confirmarea „resetează lista de verificare” folosește acum dialogul accesibil comun al kitului (FFF.dialog); copia proprie a codului dialogului (inclusiv alternativa cu `confirm` nativ) a fost eliminată. Comportamentul și traducerile rămân neschimbate.

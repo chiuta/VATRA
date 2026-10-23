@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.9 · **Last updated:** 2026-10-23
+**Version:** 1.3.10 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 Audit: 2026-10-10
 
 ## History / Changelog
+
+### 1.3.10 — 2026-10-23
+- Heat index: now follows the full NWS algorithm (simple formula first, Rothfusz regression only when it reaches 80 °F, plus the two documented corrections for very low and very high humidity); before, values near the 27 °C threshold and at humidity < 13 % or > 85 % were slightly off.
+- Personal notes: at most 500 notes (restore, import and manual add), so a hostile file or backup cannot freeze the page or fill the storage.
+- On touch screens (`pointer: coarse`) the menu, theme and language controls have a 44 px touch target.
 
 ### 1.3.9 — 2026-10-23
 - fff-kit 1.2.0: the “reset checklist” confirmation now uses the kit's shared accessible dialog (FFF.dialog); the application's own copy of the dialog code (including its native `confirm` fallback) was removed. Behavior and translations are unchanged.

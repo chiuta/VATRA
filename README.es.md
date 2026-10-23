@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.3.9 · **Última actualización:** 2026-10-23
+**Versión:** 1.3.10 · **Última actualización:** 2026-10-23
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ El enlace «Informar de un error» (GitHub) apunta ahora a `chiuta/vatra`. Las i
 Auditoría: 2026-10-10
 
 ## Historial / Changelog
+
+### 1.3.10 — 2026-10-23
+- Índice de calor: sigue ahora el algoritmo NWS completo (primero la fórmula simple, la regresión de Rothfusz solo al llegar a 80 °F, más las dos correcciones documentadas para humedad muy baja y muy alta); antes, los valores cercanos al umbral de 27 °C y con humedad < 13 % o > 85 % estaban ligeramente desviados.
+- Notas personales: como máximo 500 notas (restauración, importación y alta manual), para que un archivo o copia hostil no pueda congelar la página ni llenar el almacenamiento.
+- En pantallas táctiles (`pointer: coarse`) los controles de menú, tema e idioma tienen un área táctil de 44 px.
 
 ### 1.3.9 — 2026-10-23
 - fff-kit 1.2.0: la confirmación «restablecer la lista de comprobación» usa ahora el diálogo accesible común del kit (FFF.dialog); se ha eliminado la copia propia del código del diálogo (incluida su alternativa con `confirm` nativo). Comportamiento y traducciones sin cambios.
