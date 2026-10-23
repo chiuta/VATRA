@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.3.9 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 1.3.10 · **Zuletzt aktualisiert:** 2026-10-23
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ Der Link „Fehler melden“ (GitHub) verweist jetzt auf `chiuta/vatra`. Die med
 Audit: 2026-10-10
 
 ## Verlauf / Changelog
+
+### 1.3.10 — 2026-10-23
+- Hitzeindex: folgt jetzt dem vollständigen NWS-Algorithmus (zuerst die einfache Formel, die Rothfusz-Regression erst ab 80 °F, plus die zwei dokumentierten Korrekturen für sehr niedrige und sehr hohe Luftfeuchte); zuvor waren die Werte nahe der 27-°C-Schwelle und bei Feuchte < 13 % oder > 85 % leicht verschoben.
+- Persönliche Notizen: höchstens 500 Notizen (Wiederherstellen, Import und manuelles Hinzufügen), damit eine feindliche Datei oder Sicherung die Seite nicht einfrieren oder den Speicher füllen kann.
+- Auf Touchscreens (`pointer: coarse`) haben Menü-, Theme- und Sprachsteuerung ein Touch-Ziel von 44 px.
 
 ### 1.3.9 — 2026-10-23
 - fff-kit 1.2.0: Die Bestätigung „Checkliste zurücksetzen“ verwendet jetzt den gemeinsamen barrierefreien Dialog des Kits (FFF.dialog); die eigene Kopie des Dialogcodes (samt nativem `confirm`-Fallback) wurde entfernt. Verhalten und Übersetzungen unverändert.

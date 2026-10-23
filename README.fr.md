@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.3.9 · **Dernière mise à jour :** 2026-10-23
+**Version :** 1.3.10 · **Dernière mise à jour :** 2026-10-23
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -44,6 +44,11 @@ Le lien « Signaler une erreur » (GitHub) pointe désormais vers `chiuta/vatra`
 Audit : 2026-10-10
 
 ## Historique / Changelog
+
+### 1.3.10 — 2026-10-23
+- Indice de chaleur : suit maintenant l'algorithme NWS complet (formule simple d'abord, régression de Rothfusz seulement à partir de 80 °F, plus les deux corrections documentées pour une humidité très basse ou très haute) ; auparavant, les valeurs près du seuil de 27 °C et à humidité < 13 % ou > 85 % étaient légèrement décalées.
+- Notes personnelles : 500 notes au maximum (restauration, import et ajout manuel), pour qu'un fichier ou une sauvegarde hostile ne puisse pas figer la page ni remplir le stockage.
+- Sur écrans tactiles (`pointer: coarse`), les commandes de menu, de thème et de langue ont une cible tactile de 44 px.
 
 ### 1.3.9 — 2026-10-23
 - fff-kit 1.2.0 : la confirmation « réinitialiser la liste de contrôle » utilise désormais le dialogue accessible commun du kit (FFF.dialog) ; la copie propre du code de dialogue (y compris son repli sur `confirm` natif) a été supprimée. Comportement et traductions inchangés.
