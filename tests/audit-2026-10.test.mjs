@@ -36,7 +36,7 @@ check("fără erori la restaurare", p2.st.errs.length === 0, p2.st.errs);
 await p2.browser.close();
 
 console.log("3. ținte tactile (pointer: coarse)");
-const b3 = await chromium.launch({executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"]});
+const b3 = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined, args: ["--no-sandbox"]});
 const c3 = await b3.newContext({viewport: {width: 390, height: 800}, hasTouch: true, isMobile: true});
 const p3 = await c3.newPage(); await p3.goto("file://" + INDEX); await p3.waitForTimeout(800);
 const sizes = await p3.evaluate(() => [...document.querySelectorAll(".navlink, #drawerBtn, #themeBtnMobile, #langSel")].map(e => { const r = e.getBoundingClientRect(); return [e.id || e.className, r.width, r.height]; }));

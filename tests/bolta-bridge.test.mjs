@@ -1,8 +1,10 @@
 // VATRA 1.2.0 — „↗ Cerul de acum, în Bolta”. Copiat în VATRA/tests/bolta-bridge.test.mjs. Rulare: node bolta-bridge.test.mjs <dirVATRA> <dirBolta>
-import {createRequire} from "module"; const require = createRequire("/opt/node-tools/package.json"); const {chromium} = require("playwright");
+import {createRequire} from "module"; const require = createRequire(process.env.PW_ROOT || import.meta.url); const {chromium} = require("playwright");
+import {existsSync as __ex} from "node:fs"; import __pa from "node:path";
+const __dirs = (args, defs) => { const out = defs.map((d, i) => { const c = args[i] ? [args[i]] : (Array.isArray(d) ? d : [d]); return c.map((x) => __pa.resolve(process.cwd(), x)).find((x) => __ex(__pa.join(x, "index.html"))); }); if (out.some((x) => !x)) { console.log("SKIP: testul cere și aplicațiile învecinate (" + defs.map((d) => [].concat(d)[0]).join(", ") + ") lângă depozit; în CI singur se omite"); process.exit(0); } return out; }; // [fff-ci]
 let fails = 0, passes = 0; const check = (n, c, x) => { c ? (passes++, console.log("  ok  " + n)) : (fails++, console.log("FAIL  " + n + (x !== undefined ? "  -> " + JSON.stringify(x) : ""))); };
-const [dV, dB] = process.argv.slice(2);
-const b = await chromium.launch({executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"]});
+const [dV, dB] = __dirs(process.argv.slice(2), [".", ["../Bolta", "../chiuta.github.io/apps/Bolta"]]);
+const b = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined, args: ["--no-sandbox"]});
 const ctx = await b.newContext({viewport: {width: 1100, height: 900}, permissions: ["geolocation"], geolocation: {latitude: 45.65791, longitude: 25.60123, accuracy: 10}});
 const net = []; await ctx.route(/^https?:/, r => { net.push(r.request().url()); r.abort(); });
 await ctx.addInitScript(() => { try { localStorage.setItem("vatra:lang", "ro"); } catch (e) {} });
