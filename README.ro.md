@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.11 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -27,6 +27,12 @@ Fără funcții de învățare noi în această versiune: **repetiția spațiat�
 ### Transparență și copie de siguranță (fff-kit)
 
 Un clic (sau Enter) pe versiunea afișată (`v 1.1.0 · 2026-10-14`) deschide fereastra „Transparență”: gazdele de rețea declarate (0 cereri externe), cheile de stocare locală cu dimensiuni, API-urile folosite, mărimea și SHA-256 al fișierului (cu verificator pentru un fișier descărcat) și **copia de siguranță** a datelor aplicației într-un fișier `.fff.json` (opțional criptat cu parolă, AES-GCM 256 / PBKDF2; parola nu poate fi recuperată), import cu confirmare și ștergerea datelor aplicației. Kitul (`fff-kit`, module: core, label, bundle) este lipit în `index.html`, nu face cereri de rețea și nu schimbă datele existente; fără el aplicația funcționează la fel. Copia de siguranță a kitului cuprinde cheia de stocare opțională a aplicației (dacă ai activat păstrarea pe dispozitiv), nu progresul testului, care se exportă prin „Exportă progresul”. Textele kitului sunt în 8 limbi (ro, en, fr, it, es, pt, hu, de); **traducerile fr/it/es/pt/hu/de sunt automate și neverificate nativ**. Interfața și conținutul aplicației sunt disponibile și în cele 8 limbi (vezi nota despre limbi de la început); traducerile conținutului sunt automate, neverificate de vorbitori nativi.
+
+## Funcții noi (v2.0.0, 26 octombrie 2026)
+
+- **§21 Plan personalizat**: alegi mediul (cele 7 din §13), anotimpul și ce echipament ai la tine; ghidul ordonează prioritățile după Regula lui 3 (§3), arată ce ai și ce îți lipsește și trimite la paginile potrivite (§4–§11). Textele de bază vin din paragrafele existente ale ghidului; nu s-au adăugat date medicale sau cifre noi. Este material educativ, nu înlocuiește instruirea, iar avertismentul „sună 112” rămâne vizibil.
+- **Notă de urgență tipăribilă** (contacte, date medicale, traseu și oră de întoarcere): rămâne doar în browser, intră în copia de rezervă completă și se tipărește împreună cu planul. **Test rapid** de 5 întrebări din testul existent.
+- Fără rețea nouă; cheile de stocare nu s-au schimbat (planul și nota sunt în `vatra:v1`).
 
 ## Date și confidențialitate
 Verificat prin audit: pagina nu face cereri de rețea (0 cereri la încărcare, fără `fetch`/CDN/fonturi externe) și nu trimite nimic nicăieri; singura stocare este `localStorage` local (cheia `vatra:v1`, cu bifele trusei, notițele, progresul testului și tema), la fel de privată ca fișierul însuși. Geolocalizarea (butonul din calculatorul de azimut) se folosește doar la cerere, local. Linkurile externe (Salvamont, RO-ALERT, Crucea Roșie etc.) se deschid doar la click. Are politică CSP strictă (meta): fără conexiuni de rețea (`connect-src 'none'`), scriptul permis doar pe bază de hash SHA-256 (fără `unsafe-inline` pentru script), stilurile inline.

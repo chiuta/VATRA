@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.11 · **Last updated:** 2026-10-26
+**Version:** 2.0.0 · **Last updated:** 2026-10-26
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -27,6 +27,12 @@ No new learning features in this version: **spaced repetition already exists** (
 ### Transparency and backup (fff-kit)
 
 A click (or Enter) on the displayed version (`v 1.1.0 · 2026-10-14`) opens the "Transparency" window: the declared network hosts (0 external requests), the local storage keys with sizes, the APIs used, the size and SHA-256 of the file (with a checker for a downloaded file) and the **backup** of the app's data to a `.fff.json` file (optionally encrypted with a password, AES-GCM 256 / PBKDF2; the password cannot be recovered), import with confirmation and deletion of the app's data. The kit (`fff-kit`, modules: core, label, bundle) is pasted into `index.html`, makes no network requests and does not change existing data; without it the app works the same. The kit's backup covers the app's optional storage key (if you enabled keeping data on the device), not the quiz progress, which is exported through "Export progress". The kit's texts are in 8 languages (ro, en, fr, it, es, pt, hu, de); **the fr/it/es/pt/hu/de translations are automatic and not verified by native speakers**. The app's own interface and content are also available in the 8 languages (see the language note near the top); the content translations are automatic and not verified by native speakers.
+
+## New features (v2.0.0, 26 October 2026)
+
+- **§21 Personal plan**: choose the environment (the 7 from §13), the season and the gear you carry; the guide orders priorities by the Rule of 3 (§3), shows what you have and what is missing, and points to the right pages (§4–§11). Base texts come from the guide's existing paragraphs; no new medical data or figures were added. Educational material only - it does not replace training, and the "call 112" warning stays visible.
+- **Printable emergency note** (contacts, medical info, route and return time): stays in the browser only, is part of the full backup and prints together with the plan. **Quick test** of 5 questions from the existing quiz.
+- No new network access; storage keys unchanged (plan and note live in `vatra:v1`).
 
 ## Data and privacy
 Verified by audit: the page makes no network requests (0 requests on load, no `fetch`/CDN/external fonts) and sends nothing anywhere; the only storage is local `localStorage` (key `vatra:v1`, with the kit checkmarks, notes, quiz progress and theme), as private as the file itself. Geolocation (the button in the azimuth calculator) is used only on request, locally. External links (Salvamont, RO-ALERT, the Red Cross, etc.) open only on click. It has a strict CSP policy (meta): no network connections (`connect-src 'none'`), script allowed only by SHA-256 hash (no `unsafe-inline` for script), inline styles.
