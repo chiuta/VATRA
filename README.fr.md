@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 2.0.0 · **Dernière mise à jour :** 2026-10-26
+**Version :** 2.1.0 · **Dernière mise à jour :** 2026-10-27
+
+**État:** stable · **Hors ligne:** complet
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -43,7 +45,12 @@ Le lien « Signaler une erreur » (GitHub) pointe désormais vers `chiuta/vatra`
 
 Audit : 2026-10-10
 
+## Fiche de poche et installation (v2.1.0)
+
+Le bouton **Imprimer la fiche de poche** (barre latérale) imprime une seule fiche de poche (A4, à découper le long du pointillé) avec la règle des 3, l’ordre des décisions, les signaux et le script de l’appel au 112, dans la langue choisie ; le reste du guide n’est pas imprimé. Les textes viennent du guide et restent donc synchronisés. **Installation comme application (PWA) :** le manifeste et le service worker existaient déjà ; un bouton **Installer comme application** apparaît quand le navigateur le propose, sinon une indication texte (uniquement depuis la page publiée en https, pas depuis un fichier local). Un manifeste « inline » (blob) n’a pas été utilisé : il exigerait d’assouplir `manifest-src`.
+
 ## Historique / Changelog
+- **2.1.0 — 2026-10-27 :** fiche de poche imprimable (CSS `@media print`) et bouton d’installation PWA ; lignes État/Hors ligne ; CHANGELOG.md (précédente : v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Indice de chaleur : suit maintenant l'algorithme NWS complet (formule simple d'abord, régression de Rothfusz seulement à partir de 80 °F, plus les deux corrections documentées pour une humidité très basse ou très haute) ; auparavant, les valeurs près du seuil de 27 °C et à humidité < 13 % ou > 85 % étaient légèrement décalées.

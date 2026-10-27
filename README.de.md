@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 2.0.0 · **Zuletzt aktualisiert:** 2026-10-26
+**Version:** 2.1.0 · **Zuletzt aktualisiert:** 2026-10-27
+
+**Status:** stabil · **Offline:** vollständig
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -43,7 +45,12 @@ Der Link „Fehler melden“ (GitHub) verweist jetzt auf `chiuta/vatra`. Die med
 
 Audit: 2026-10-10
 
+## Taschenkarte und Installation (v2.1.0)
+
+Die Schaltfläche **Taschenkarte drucken** (Seitenleiste) druckt eine einzelne Taschenkarte (A4, an der gepunkteten Linie auszuschneiden) mit der 3er-Regel, der Reihenfolge der Entscheidungen, den Signalen und dem Ablauf des Notrufs 112 in der gewählten Sprache; der Rest des Leitfadens wird nicht gedruckt. Die Texte stammen aus dem Leitfaden und bleiben daher synchron. **Installation als App (PWA):** Manifest und Service Worker gab es schon; jetzt erscheint die Schaltfläche **Als App installieren**, wenn der Browser sie anbietet, sonst ein Texthinweis (nur von der veröffentlichten https-Seite, nicht von einer lokalen Datei). Ein Inline-Manifest (Blob) wurde nicht verwendet: Es würde eine Lockerung von `manifest-src` erfordern.
+
 ## Verlauf / Changelog
+- **2.1.0 — 2026-10-27:** druckbare Taschenkarte (CSS `@media print`) und PWA-Installationsschaltfläche; Zeilen Status/Offline; CHANGELOG.md (vorherige: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Hitzeindex: folgt jetzt dem vollständigen NWS-Algorithmus (zuerst die einfache Formel, die Rothfusz-Regression erst ab 80 °F, plus die zwei dokumentierten Korrekturen für sehr niedrige und sehr hohe Luftfeuchte); zuvor waren die Werte nahe der 27-°C-Schwelle und bei Feuchte < 13 % oder > 85 % leicht verschoben.

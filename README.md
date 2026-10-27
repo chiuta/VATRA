@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.0.0 · **Last updated:** 2026-10-26
+**Version:** 2.1.0 · **Last updated:** 2026-10-27
+
+**Status:** stable · **Offline:** complete
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -49,7 +51,12 @@ The "Report an error" link (GitHub) now points to `chiuta/vatra`. The medical/su
 
 Audit: 2026-10-10
 
+## Pocket card and install (v2.1.0)
+
+The **Print the pocket card** button (sidebar) prints a single pocket card (A4, cut along the dotted line) with the Rule of 3, the order of decisions, signals and the 112 call script, in the selected language; the rest of the guide is not printed. The texts come from the guide, so they stay in sync. **Installing as an app (PWA):** the manifest and service worker already existed; an **Install as an app** button now appears when the browser offers it, otherwise a text hint (works only from the published https page, not from a local file). An inline (blob) manifest was not used: it would require relaxing `manifest-src`.
+
 ## History / Changelog
+- **2.1.0 — 2026-10-27:** printable pocket card (CSS `@media print`) and PWA install button; Status/Offline lines; CHANGELOG.md (previous: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Heat index: now follows the full NWS algorithm (simple formula first, Rothfusz regression only when it reaches 80 °F, plus the two documented corrections for very low and very high humidity); before, values near the 27 °C threshold and at humidity < 13 % or > 85 % were slightly off.

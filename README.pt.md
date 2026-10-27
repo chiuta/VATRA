@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 2.0.0 · **Última atualização:** 2026-10-26
+**Versão:** 2.1.0 · **Última atualização:** 2026-10-27
+
+**Estado:** estável · **Offline:** completo
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -43,7 +45,12 @@ A ligação «Comunicar um erro» (GitHub) aponta agora para `chiuta/vatra`. As 
 
 Auditoria: 2026-10-10
 
+## Ficha de bolso e instalação (v2.1.0)
+
+O botão **Imprimir a ficha de bolso** (barra lateral) imprime uma única ficha de bolso (A4, para recortar pela linha tracejada) com a regra do 3, a ordem das decisões, os sinais e o guião da chamada para o 112, no idioma escolhido; o resto do guia não é impresso. Os textos vêm do guia, por isso ficam sincronizados. **Instalação como aplicação (PWA):** o manifesto e o service worker já existiam; agora aparece o botão **Instalar como aplicação** quando o navegador o oferece; caso contrário, uma indicação de texto (só a partir da página publicada em https, não de um ficheiro local). Não se usou um manifesto «inline» (blob): exigiria relaxar `manifest-src`.
+
 ## Histórico / Changelog
+- **2.1.0 — 2026-10-27:** ficha de bolso imprimível (CSS `@media print`) e botão de instalação PWA; linhas Estado/Offline; CHANGELOG.md (anterior: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Índice de calor: segue agora o algoritmo NWS completo (primeiro a fórmula simples, a regressão de Rothfusz só quando atinge 80 °F, mais as duas correções documentadas para humidade muito baixa e muito alta); antes, os valores próximos do limiar de 27 °C e com humidade < 13 % ou > 85 % estavam ligeiramente desviados.
