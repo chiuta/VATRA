@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 2.0.0 · **Ultimo aggiornamento:** 2026-10-26
+**Versione:** 2.1.0 · **Ultimo aggiornamento:** 2026-10-27
+
+**Stato:** stabile · **Offline:** completo
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -43,7 +45,12 @@ Il link «Segnala un errore» (GitHub) ora rimanda a `chiuta/vatra`. Le indicazi
 
 Audit: 2026-10-10
 
+## Scheda tascabile e installazione (v2.1.0)
+
+Il pulsante **Stampa la scheda tascabile** (barra laterale) stampa una sola scheda tascabile (A4, da ritagliare lungo la linea tratteggiata) con la regola del 3, l’ordine delle decisioni, i segnali e il copione della chiamata al 112, nella lingua scelta; il resto della guida non viene stampato. I testi provengono dalla guida e restano sincronizzati. **Installazione come app (PWA):** manifest e service worker esistevano già; ora compare il pulsante **Installa come app** quando il browser lo offre, altrimenti un’indicazione testuale (solo dalla pagina pubblicata in https, non da un file locale). Non è stato usato un manifest «inline» (blob): richiederebbe di allentare `manifest-src`.
+
 ## Cronologia / Changelog
+- **2.1.0 — 2026-10-27:** scheda tascabile stampabile (CSS `@media print`) e pulsante di installazione PWA; righe Stato/Offline; CHANGELOG.md (precedente: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Indice di calore: segue ora l'algoritmo NWS completo (prima la formula semplice, la regressione di Rothfusz solo quando raggiunge 80 °F, più le due correzioni documentate per umidità molto bassa e molto alta); prima, i valori vicini alla soglia di 27 °C e con umidità < 13 % o > 85 % erano leggermente spostati.

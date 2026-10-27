@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.1.0 · **Ultima actualizare:** 2026-10-27
+
+**Stare:** stabil · **Offline:** complet
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -49,7 +51,12 @@ Linkul „Raportează o eroare” (GitHub) trimite acum la `chiuta/vatra`. Indic
 
 Audit: 2026-10-10
 
+## Fișă de buzunar și instalare (v2.1.0)
+
+Butonul **Tipărește fișa de buzunar** (bara laterală) tipărește o singură fișă de buzunar (A4, de tăiat pe linia punctată), cu Regula lui 3, ordinea deciziilor, semnalele și scriptul apelului la 112, în limba aleasă; restul ghidului nu se tipărește. Textele vin din ghid, deci rămân sincronizate. **Instalarea ca aplicație (PWA):** manifestul și service worker-ul existau deja; acum apare butonul **Instalează ca aplicație** când browserul îl oferă, iar în rest o indicație text (merge doar din pagina publicată, https, nu din fișier local). Manifest „inline” (blob) nu s-a folosit: ar cere relaxarea `manifest-src`.
+
 ## Istoric / Changelog
+- **2.1.0 — 2026-10-27:** fișă de buzunar tipăribilă (CSS `@media print`) și buton de instalare PWA; linii Stare/Offline; CHANGELOG.md (anterior: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Indicele de căldură: urmează acum algoritmul NWS complet (formula simplă întâi, regresia Rothfusz doar când ajunge la 80 °F, plus cele două corecții documentate pentru umiditate foarte mică și foarte mare); înainte, valorile din apropierea pragului de 27 °C și la umiditate < 13 % sau > 85 % erau ușor deplasate.

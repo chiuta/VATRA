@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 2.0.0 · **Utolsó frissítés:** 2026-10-26
+**Verzió:** 2.1.0 · **Utolsó frissítés:** 2026-10-27
+
+**Állapot:** stabil · **Offline:** teljes
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -43,7 +45,12 @@ A „Hiba jelentése” hivatkozás (GitHub) mostantól a `chiuta/vatra` tárol�
 
 Audit: 2026-10-10
 
+## Zsebkártya és telepítés (v2.1.0)
+
+A **Zsebkártya nyomtatása** gomb (oldalsáv) egyetlen zsebkártyát nyomtat (A4, a pontozott vonal mentén kivágható) a hármas szabállyal, a döntések sorrendjével, a jelzésekkel és a 112-es hívás menetével a kiválasztott nyelven; az útmutató többi része nem nyomtatódik. A szövegek az útmutatóból származnak, így szinkronban maradnak. **Telepítés alkalmazásként (PWA):** a manifest és a service worker már megvolt; most megjelenik a **Telepítés alkalmazásként** gomb, ha a böngésző felajánlja, különben szöveges útmutató (csak a közzétett https oldalról működik, helyi fájlból nem). Inline (blob) manifestet nem használtunk: ehhez lazítani kellene a `manifest-src` irányelvet.
+
 ## Előzmények / Changelog
+- **2.1.0 — 2026-10-27:** nyomtatható zsebkártya (CSS `@media print`) és PWA-telepítő gomb; Állapot/Offline sorok; CHANGELOG.md (előző: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
 - Hőindex: most a teljes NWS-algoritmust követi (előbb az egyszerű képlet, a Rothfusz-regresszió csak 80 °F-tól, plusz a két dokumentált korrekció nagyon alacsony és nagyon magas páratartalomra); korábban a 27 °C-os küszöb körüli és a < 13 % vagy > 85 % páratartalmú értékek kissé eltértek.
