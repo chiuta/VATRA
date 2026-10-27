@@ -2,7 +2,7 @@
   "schema": 1,
   "slug": "vatra",
   "name": "VATRA — Enciclopedia supraviețuirii",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "updated": "2026-10-27",
   "description": "Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.",
   "egress": [],
@@ -18,8 +18,8 @@
     "vatra:lang",
     "vatra:v1"
   ],
-  "sizeBytes": 1605764,
-  "sha256": "d0708a8ce29e4a1bf186c9c8e2c9d01b92eb70c7943976cf88ca5b44efa9b547",
+  "sizeBytes": 1605873,
+  "sha256": "fb550013f8e7cbdbc9533ee5923f5c7e5a6d393d1fde087c055cad0bcd13777a",
   "csp": {
     "present": true,
     "directives": {

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 2.1.0 · **Última atualização:** 2026-10-27
+**Versão:** 2.2.0 · **Última atualização:** 2026-10-27
 
 **Estado:** estável · **Offline:** completo
 
@@ -49,7 +49,19 @@ Auditoria: 2026-10-10
 
 O botão **Imprimir a ficha de bolso** (barra lateral) imprime uma única ficha de bolso (A4, para recortar pela linha tracejada) com a regra do 3, a ordem das decisões, os sinais e o guião da chamada para o 112, no idioma escolhido; o resto do guia não é impresso. Os textos vêm do guia, por isso ficam sincronizados. **Instalação como aplicação (PWA):** o manifesto e o service worker já existiam; agora aparece o botão **Instalar como aplicação** quando o navegador o oferece; caso contrário, uma indicação de texto (só a partir da página publicada em https, não de um ficheiro local). Não se usou um manifesto «inline» (blob): exigiria relaxar `manifest-src`.
 
+## Pocket card with your own details (2.2.0)
+
+_(English only; not yet translated into this language. Machine translation intentionally not added to avoid errors in technical statements.)_
+
+If you filled in the **emergency note** (name, contacts, medical details, route, vehicle) and/or generated the **plan** in the app, the pocket card adds a block "My details (filled in by you in VATRA; not part of the guide)" when printing: the filled fields and the plan summary (environment, season, ticked gear). The block is emptied after printing (`afterprint`); the data stay in the app only, as before, and are sent nowhere. Your text is escaped (not interpreted as HTML). With nothing filled in, the card is identical to 2.1.
+
+**Unchanged and why:** the "inline" (blob) PWA manifest was NOT done: `manifest.webmanifest` and `sw.js` already exist, and an inline manifest would require relaxing `manifest-src` in the CSP. The map and the kit are not on the card. The A4 fit was checked with `print` media emulation, not with a real printer. The new label in fr/it/es/pt/de/hu is a machine translation.
+
 ## Histórico / Changelog
+
+### 2.2.0 — 2026-10-27
+- The pocket card optionally includes the user's emergency note and plan summary.
+
 - **2.1.0 — 2026-10-27:** ficha de bolso imprimível (CSS `@media print`) e botão de instalação PWA; linhas Estado/Offline; CHANGELOG.md (anterior: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
