@@ -2,6 +2,14 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) MAJOR.MINOR.PATCH.
 
+## 2.2.0 — 2026-10-27 (anterior: 2.1.0)
+
+Fișa de buzunar cu datele tale:
+- Dacă ai completat nota de urgență și/sau ai generat planul, fișa adaugă la tipărire blocul „Datele mele (completate de tine în VATRA; nu fac parte din ghid)"; blocul se golește după tipărire, textul e scăpat, fără date completate fișa e neschimbată. Cheie nouă `pocket.mine` în 8 limbi (fr/it/es/pt/de/hu: traducere automată).
+- Test nou `tests/pocket-v22.test.mjs` (17 verificări, inclusiv încadrarea pe A4 cu emulare `print`). Manifest PWA inline: tot nefăcut (CSP), documentat în README.
+
+---
+
 ## 2.1.0 — 2026-10-27 (anterior: v2.0.0)
 
 Stare: stabil · Offline: complet

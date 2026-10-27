@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.1.0 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 2.2.0 · **Ultima actualizare:** 2026-10-27
 
 **Stare:** stabil · **Offline:** complet
 
@@ -55,7 +55,17 @@ Audit: 2026-10-10
 
 Butonul **Tipărește fișa de buzunar** (bara laterală) tipărește o singură fișă de buzunar (A4, de tăiat pe linia punctată), cu Regula lui 3, ordinea deciziilor, semnalele și scriptul apelului la 112, în limba aleasă; restul ghidului nu se tipărește. Textele vin din ghid, deci rămân sincronizate. **Instalarea ca aplicație (PWA):** manifestul și service worker-ul existau deja; acum apare butonul **Instalează ca aplicație** când browserul îl oferă, iar în rest o indicație text (merge doar din pagina publicată, https, nu din fișier local). Manifest „inline” (blob) nu s-a folosit: ar cere relaxarea `manifest-src`.
 
+## Fișa de buzunar cu datele tale (2.2.0)
+
+Dacă ai completat în aplicație **nota de urgență** (nume, contacte, date medicale, traseu, vehicul) și/sau ai generat **planul**, fișa de buzunar adaugă la tipărire un bloc „Datele mele (completate de tine în VATRA; nu fac parte din ghid)": câmpurile completate și sinteza planului (mediu, anotimp, echipament bifat). Blocul se golește după tipărire (`afterprint`); datele rămân doar în aplicație, ca înainte, și nu se trimit nicăieri. Textul tău este scăpat (nu se interpretează ca HTML). Fără date completate, fișa e identică cu cea din 2.1.
+
+**Neschimbat și motive:** manifestul PWA „inline" (blob) NU s-a făcut: există deja `manifest.webmanifest` și `sw.js`, iar un manifest inline ar cere relaxarea `manifest-src` din CSP. Harta și trusa nu sunt incluse în fișă. Încadrarea pe A4 a fost verificată cu emulare de media `print`, nu cu o imprimantă reală. Eticheta nouă în fr/it/es/pt/de/hu este traducere automată.
+
 ## Istoric / Changelog
+
+### 2.2.0 — 2026-10-27
+- Fișa de buzunar include (opțional) nota de urgență și sinteza planului completate de utilizator.
+
 - **2.1.0 — 2026-10-27:** fișă de buzunar tipăribilă (CSS `@media print`) și buton de instalare PWA; linii Stare/Offline; CHANGELOG.md (anterior: v2.0.0).
 
 ### 1.3.10 — 2026-10-23

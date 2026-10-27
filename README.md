@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.1.0 · **Last updated:** 2026-10-27
+**Version:** 2.2.0 · **Last updated:** 2026-10-27
 
 **Status:** stable · **Offline:** complete
 
@@ -55,7 +55,17 @@ Audit: 2026-10-10
 
 The **Print the pocket card** button (sidebar) prints a single pocket card (A4, cut along the dotted line) with the Rule of 3, the order of decisions, signals and the 112 call script, in the selected language; the rest of the guide is not printed. The texts come from the guide, so they stay in sync. **Installing as an app (PWA):** the manifest and service worker already existed; an **Install as an app** button now appears when the browser offers it, otherwise a text hint (works only from the published https page, not from a local file). An inline (blob) manifest was not used: it would require relaxing `manifest-src`.
 
+## Pocket card with your own details (2.2.0)
+
+If you filled in the **emergency note** (name, contacts, medical details, route, vehicle) and/or generated the **plan** in the app, the pocket card adds a block "My details (filled in by you in VATRA; not part of the guide)" when printing: the filled fields and the plan summary (environment, season, ticked gear). The block is emptied after printing (`afterprint`); the data stay in the app only, as before, and are sent nowhere. Your text is escaped (not interpreted as HTML). With nothing filled in, the card is identical to 2.1.
+
+**Unchanged and why:** the "inline" (blob) PWA manifest was NOT done: `manifest.webmanifest` and `sw.js` already exist, and an inline manifest would require relaxing `manifest-src` in the CSP. The map and the kit are not on the card. The A4 fit was checked with `print` media emulation, not with a real printer. The new label in fr/it/es/pt/de/hu is a machine translation.
+
 ## History / Changelog
+
+### 2.2.0 — 2026-10-27
+- The pocket card optionally includes the user's emergency note and plan summary.
+
 - **2.1.0 — 2026-10-27:** printable pocket card (CSS `@media print`) and PWA install button; Status/Offline lines; CHANGELOG.md (previous: v2.0.0).
 
 ### 1.3.10 — 2026-10-23
