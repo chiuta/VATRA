@@ -18,8 +18,8 @@
     "vatra:lang",
     "vatra:v1"
   ],
-  "sizeBytes": 1605873,
-  "sha256": "fb550013f8e7cbdbc9533ee5923f5c7e5a6d393d1fde087c055cad0bcd13777a",
+  "sizeBytes": 1746307,
+  "sha256": "80222b1b368175fc076c8043a147954902d4f769f9e3a067473bd31d014ce869",
   "csp": {
     "present": true,
     "directives": {
@@ -60,7 +60,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "kit": {
@@ -70,7 +74,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "selfSerializing": true
