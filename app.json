@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "vatra",
   "name": "' + xml(tr('pt', { i: i + 1, t: e.title, lat: e.lat, lon: e.lon })) + '",
-  "version": "2.2.7",
-  "updated": "2026-11-13",
+  "version": "2.2.8",
+  "updated": "2026-11-15",
   "description": "Ghid complet, off-line, despre supraviețuire: apă, foc, adăpost, hrană, prim ajutor, navigație fără GPS, semnalizare, dezastre naturale și multe altele.",
   "egress": [],
   "permissions": [
@@ -20,8 +20,8 @@
     "vatra:lang",
     "vatra:v1"
   ],
-  "sizeBytes": 1919926,
-  "sha256": "3c83f2ce782e35d4a3e1a14d09677fd61424b596b8b02f627de581cdd755c28a",
+  "sizeBytes": 1925214,
+  "sha256": "0eae704c9f137c672f477d6e6829aa965a6566e5859fd73bcfb74988b4e1311e",
   "csp": {
     "present": true,
     "directives": {
