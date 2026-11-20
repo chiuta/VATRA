@@ -2,6 +2,10 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) MAJOR.MINOR.PATCH.
 
+## 2.3.4 — 2026-11-20
+
+- Banda „Ordinea priorităților” de pe prima pagină (patru segmente de câte 25%) tăia etichetele la 320 px în toate cele 8 limbi (de exemplu «TEMPERATURĂ», «TEMPÉRATURE», «NOURRITURE»); segmentele se așază acum după lungimea etichetei și trec pe al doilea rând când nu încap (constatat cu bateria adversarială, 20 noiembrie 2026)
+
 ## 2.3.3 — 2026-11-20
 
 - Metadate: numele aplicației din `app.json` și din `fff-info` era un fragment de cod (un `<title>` dintr-un șablon al scriptului, luat în locul titlului paginii); acum este titlul real (constatat la scanarea tuturor fișierelor app.json din depozite, 19 noiembrie 2026; kit fff 1.8.1 corectează citirea titlului)
